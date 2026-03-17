@@ -29,22 +29,23 @@ const faqs = [
 ];
 
 const FAQSection = () => {
-  const [open, setOpen] = useState<number | null>(null);
+  const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="section-padding bg-accent">
+    <section id="faq" className="section-padding" style={{ background: "hsl(var(--background))" }}>
       <div className="container-page max-w-[720px]">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="heading-section text-foreground text-center"
+          transition={{ duration: 0.5 }}
+          className="text-center"
         >
-          Frequently asked questions
-        </motion.h2>
+          <p className="label-overline mb-4">FAQ</p>
+          <h2 className="heading-section text-foreground">Frequently asked questions</h2>
+        </motion.div>
 
-        <div className="mt-14">
+        <div className="mt-12 border-t border-border">
           {faqs.map((faq, i) => (
             <motion.div
               key={i}
@@ -56,11 +57,15 @@ const FAQSection = () => {
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between py-5 text-left"
+                className="w-full flex items-center justify-between py-6 text-left group"
               >
-                <span className="text-sm font-medium text-foreground pr-4">{faq.q}</span>
-                <span className="text-muted-foreground flex-shrink-0 text-lg">
-                  {open === i ? "−" : "+"}
+                <span className="text-lg font-semibold text-foreground pr-4">{faq.q}</span>
+                <span
+                  className={`text-muted-foreground flex-shrink-0 text-xl transition-transform duration-300 ${
+                    open === i ? "rotate-45" : ""
+                  }`}
+                >
+                  +
                 </span>
               </button>
               <AnimatePresence>
@@ -69,10 +74,10 @@ const FAQSection = () => {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <p className="pb-5 text-sm text-muted-foreground leading-relaxed">
+                    <p className="pb-6 text-base text-muted-foreground leading-[1.7] max-w-[640px]">
                       {faq.a}
                     </p>
                   </motion.div>
