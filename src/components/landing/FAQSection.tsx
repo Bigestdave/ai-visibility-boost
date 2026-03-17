@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
@@ -32,63 +31,54 @@ const FAQSection = () => {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="section-padding bg-warm">
-      <div className="container-page max-w-[720px]">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <div className="accent-line mx-auto mb-8" />
-          <h2 className="heading-section text-foreground">Frequently asked questions</h2>
-        </motion.div>
+    <section id="faq" className="section-padding px-7 bg-background">
+      <div className="container-page">
+        <div className="max-w-[760px] mx-auto">
+          <div className="section-header section-header--center text-center mb-12">
+            <div className="accent-line mx-auto mb-6 reveal below-fold" />
+            <h2 className="display-lg text-foreground reveal below-fold reveal-delay-1">Frequently asked questions</h2>
+          </div>
 
-        <div className="mt-12 border-t border-border">
-          {faqs.map((faq, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="border-b border-border"
-            >
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between py-6 text-left group"
-              >
-                <span className="text-base font-semibold text-foreground pr-4 font-sans">{faq.q}</span>
-                <span
-                  className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-200 ${
-                    open === i
-                      ? "bg-primary text-white"
-                      : "border border-border text-muted-foreground"
-                  }`}
-                >
-                  <span className={`text-lg leading-none transition-transform duration-300 ${open === i ? "rotate-45" : ""}`}>
-                    +
-                  </span>
-                </span>
-              </button>
-              <AnimatePresence>
-                {open === i && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
+          <div className="flex flex-col reveal below-fold reveal-delay-2">
+            {faqs.map((faq, i) => {
+              const isOpen = open === i;
+              return (
+                <div key={i} className={`border-b border-border ${i === 0 ? "border-t" : ""}`}>
+                  <button
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    className="w-full flex items-center justify-between gap-5 py-[22px] text-left text-base font-medium text-foreground hover:text-primary transition-colors"
                   >
-                    <p className="pb-6 text-base text-muted-foreground leading-[1.7] max-w-[640px] font-sans">
-                      {faq.a}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                    <span>{faq.q}</span>
+                    <span
+                      className={`w-7 h-7 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-200 ${
+                        isOpen ? "bg-primary border-primary" : "border-border"
+                      }`}
+                    >
+                      <svg
+                        className={`w-3 h-3 transition-transform duration-300 ${isOpen ? "rotate-45 text-white" : "text-ink-3"}`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div
+                    className="overflow-hidden transition-all duration-400"
+                    style={{
+                      maxHeight: isOpen ? "400px" : "0px",
+                      paddingBottom: isOpen ? "22px" : "0px",
+                      transitionTimingFunction: "cubic-bezier(.16,1,.3,1)",
+                    }}
+                  >
+                    <p className="text-[15px] text-ink-2 leading-[1.7] max-w-[640px]">{faq.a}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
