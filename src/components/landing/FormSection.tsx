@@ -30,17 +30,11 @@ const FormSection = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <div className="inline-flex items-center gap-2 border border-border rounded-full px-4 py-1.5 mb-8">
-            <svg className="w-4 h-4 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Free · No pitch call needed</span>
-          </div>
-
+          <div className="accent-line mb-8" />
           <h2 className="heading-section text-foreground">
             Request your free snapshot
           </h2>
-          <p className="mt-4 text-body-lg text-muted-foreground max-w-[560px]">
+          <p className="mt-4 text-body-lg text-muted-foreground max-w-[560px] font-sans">
             Tell us about your company and we'll run a targeted audit of how your brand appears across AI search — and send you the teardown directly.
           </p>
         </motion.div>
@@ -64,7 +58,7 @@ const FormSection = () => {
                 <svg className="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <span className="text-base text-muted-foreground">{item}</span>
+                <span className="text-base text-muted-foreground font-sans">{item}</span>
               </div>
             ))}
           </motion.div>
@@ -84,7 +78,7 @@ const FormSection = () => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-foreground">Request received</h3>
-                <p className="mt-2 text-base text-muted-foreground">We'll review your company and get back to you within 2–3 business days.</p>
+                <p className="mt-2 text-base text-muted-foreground font-sans">We'll review your company and get back to you within 2–3 business days.</p>
               </div>
             ) : (
               <form
@@ -100,13 +94,13 @@ const FormSection = () => {
                   <FormField label="Company Website" name="website" type="url" required placeholder="https://acme.com" />
                 </div>
                 <div>
-                  <label htmlFor="category" className="text-sm font-medium text-muted-foreground block mb-1.5">
+                  <label htmlFor="category" className="text-sm font-medium text-muted-foreground block mb-1.5 font-sans">
                     Main Product Category
                   </label>
                   <select
                     id="category"
                     name="category"
-                    className="w-full bg-amber-50/40 border border-border focus:border-foreground rounded-xl px-4 py-3.5 text-[15px] text-foreground outline-none transition-all appearance-none"
+                    className="w-full bg-secondary/50 border border-border focus:border-foreground rounded-xl px-4 py-3.5 text-[15px] text-foreground outline-none transition-all appearance-none font-sans"
                     defaultValue=""
                   >
                     <option value="" disabled>Select your category…</option>
@@ -117,26 +111,23 @@ const FormSection = () => {
                 </div>
                 <FormField label="Top 2 Competitors" name="competitors" type="text" required placeholder="e.g. Salesforce, HubSpot" />
                 <div>
-                  <label className="text-sm font-medium text-muted-foreground block mb-1.5">
+                  <label className="text-sm font-medium text-muted-foreground block mb-1.5 font-sans">
                     Anything specific you want us to check? <span className="text-muted-foreground/50">(optional)</span>
                   </label>
                   <textarea
                     name="notes"
                     rows={3}
-                    className="w-full bg-amber-50/40 border border-border focus:border-foreground rounded-xl px-4 py-3.5 text-[15px] text-foreground placeholder:text-muted-foreground/40 outline-none transition-all resize-none"
-                    placeholder="e.g. We're losing to Competitor X in ChatGPT comparisons, or we have no alternatives page…"
+                    className="w-full bg-secondary/50 border border-border focus:border-foreground rounded-xl px-4 py-3.5 text-[15px] text-foreground placeholder:text-muted-foreground/40 outline-none transition-all resize-none font-sans"
+                    placeholder="e.g. We're losing to Competitor X in ChatGPT comparisons…"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-foreground text-background py-4 rounded-full font-medium text-base hover:opacity-90 transition-opacity"
+                  className="w-full bg-foreground text-background py-4 rounded-xl font-medium text-base hover:opacity-90 transition-opacity font-sans"
                 >
                   Send My Snapshot
                 </button>
-                <p className="text-xs text-muted-foreground text-center flex items-center justify-center gap-1.5">
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
+                <p className="text-xs text-muted-foreground text-center font-sans">
                   We review a limited number of companies each week. Your info stays private.
                 </p>
               </form>
@@ -150,7 +141,7 @@ const FormSection = () => {
 
 const FormField = ({ label, name, type, required, placeholder }: { label: string; name: string; type: string; required?: boolean; placeholder?: string }) => (
   <div>
-    <label htmlFor={name} className="text-sm font-medium text-muted-foreground block mb-1.5">
+    <label htmlFor={name} className="text-sm font-medium text-muted-foreground block mb-1.5 font-sans">
       {label}
     </label>
     <input
@@ -159,7 +150,7 @@ const FormField = ({ label, name, type, required, placeholder }: { label: string
       type={type}
       required={required}
       placeholder={placeholder}
-      className="w-full bg-amber-50/40 border border-border focus:border-foreground rounded-xl px-4 py-3.5 text-[15px] text-foreground placeholder:text-muted-foreground/40 outline-none transition-all"
+      className="w-full bg-secondary/50 border border-border focus:border-foreground rounded-xl px-4 py-3.5 text-[15px] text-foreground placeholder:text-muted-foreground/40 outline-none transition-all font-sans"
     />
   </div>
 );

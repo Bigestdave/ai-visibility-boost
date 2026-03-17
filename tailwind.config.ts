@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        serif: ['Playfair Display', 'Georgia', 'serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace'],
       },
       colors: {
@@ -81,25 +82,10 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "drift": {
-          "0%, 100%": { transform: "translate(0, 0)" },
-          "50%": { transform: "translate(30px, -20px)" },
-        },
-        "drift-reverse": {
-          "0%, 100%": { transform: "translate(0, 0)" },
-          "50%": { transform: "translate(-20px, 30px)" },
-        },
-        "bounce-gentle": {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(8px)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "drift": "drift 20s ease-in-out infinite",
-        "drift-reverse": "drift-reverse 25s ease-in-out infinite",
-        "bounce-gentle": "bounce-gentle 2s ease-in-out infinite",
       },
     },
   },

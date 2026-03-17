@@ -32,7 +32,7 @@ const FAQSection = () => {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="section-padding bg-background">
+    <section id="faq" className="section-padding bg-warm">
       <div className="container-page max-w-[720px]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -41,6 +41,7 @@ const FAQSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
+          <div className="accent-line mx-auto mb-8" />
           <h2 className="heading-section text-foreground">Frequently asked questions</h2>
         </motion.div>
 
@@ -58,13 +59,15 @@ const FAQSection = () => {
                 onClick={() => setOpen(open === i ? null : i)}
                 className="w-full flex items-center justify-between py-6 text-left group"
               >
-                <span className="text-base font-semibold text-foreground pr-4">{faq.q}</span>
-                <span className="w-8 h-8 rounded-full border border-border flex items-center justify-center flex-shrink-0">
-                  <span
-                    className={`text-muted-foreground text-lg transition-transform duration-300 ${
-                      open === i ? "rotate-45" : ""
-                    }`}
-                  >
+                <span className="text-base font-semibold text-foreground pr-4 font-sans">{faq.q}</span>
+                <span
+                  className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-200 ${
+                    open === i
+                      ? "bg-primary text-white"
+                      : "border border-border text-muted-foreground"
+                  }`}
+                >
+                  <span className={`text-lg leading-none transition-transform duration-300 ${open === i ? "rotate-45" : ""}`}>
                     +
                   </span>
                 </span>
@@ -78,7 +81,7 @@ const FAQSection = () => {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <p className="pb-6 text-base text-muted-foreground leading-[1.7] max-w-[640px]">
+                    <p className="pb-6 text-base text-muted-foreground leading-[1.7] max-w-[640px] font-sans">
                       {faq.a}
                     </p>
                   </motion.div>
