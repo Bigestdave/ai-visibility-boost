@@ -25,7 +25,7 @@ const steps = [
 
 const HowItWorksSection = () => {
   return (
-    <section id="how-it-works" className="section-padding bg-background">
+    <section id="how-it-works" className="section-padding bg-warm">
       <div className="container-page">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -34,13 +34,14 @@ const HowItWorksSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center max-w-[640px] mx-auto"
         >
+          <div className="accent-line mx-auto mb-8" />
           <h2 className="heading-section text-foreground">How it works</h2>
-          <p className="mt-4 text-body-lg text-muted-foreground">
+          <p className="mt-4 text-body-lg text-muted-foreground font-sans">
             From free audit to production-ready pages — a clear, four-step process.
           </p>
         </motion.div>
 
-        <div className="mt-16 grid sm:grid-cols-2 gap-x-12 gap-y-14 max-w-[800px] mx-auto">
+        <div className="mt-16 max-w-[640px] mx-auto space-y-14">
           {steps.map((step, i) => (
             <motion.div
               key={i}
@@ -49,11 +50,11 @@ const HowItWorksSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <div className="w-14 h-14 rounded-full border-2 border-border flex items-center justify-center mb-5">
-                <span className="text-xl font-light text-muted-foreground">{step.num}</span>
+              <div className="w-14 h-14 rounded-full bg-background border border-border flex items-center justify-center mb-5">
+                <span className="text-xl font-light text-muted-foreground font-sans">{step.num}</span>
               </div>
-              <h4 className="text-lg font-semibold text-foreground">{step.title}</h4>
-              <p className="mt-2 text-[15px] text-muted-foreground leading-relaxed">
+              <h4 className="text-lg font-semibold text-foreground font-sans">{step.title}</h4>
+              <p className="mt-2 text-[15px] text-muted-foreground leading-relaxed font-sans">
                 {step.desc}
               </p>
             </motion.div>

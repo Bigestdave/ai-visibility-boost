@@ -17,8 +17,9 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-sm text-muted-foreground mb-6"
+            className="flex items-center gap-2 text-sm text-muted-foreground mb-6 font-sans"
           >
+            <span className="w-2 h-2 rounded-full bg-primary" />
             New category · AI Search Optimization
           </motion.p>
 
@@ -30,14 +31,14 @@ const HeroSection = () => {
           >
             Your buyers are asking{" "}
             <br className="hidden sm:block" />
-            <span className="text-muted-foreground">AI</span> about your software.
+            <em className="text-primary italic">AI</em> about your software.
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-8 text-body-lg text-muted-foreground max-w-[600px]"
+            className="mt-8 text-body-lg text-muted-foreground max-w-[600px] font-sans"
           >
             We help B2B SaaS companies improve how they appear in ChatGPT, Perplexity, and AI search — by fixing the pages, facts, and content structures AI systems rely on during software evaluation.
           </motion.p>
@@ -50,13 +51,18 @@ const HeroSection = () => {
           >
             <a
               href="#snapshot"
-              className="inline-flex items-center justify-center bg-foreground text-background px-8 py-3.5 rounded-full font-medium text-base hover:opacity-90 transition-opacity w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 bg-foreground text-background px-8 py-4 rounded-xl font-medium text-base hover:opacity-90 transition-opacity w-full sm:w-auto font-sans"
             >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
               Get My Free AI Visibility Snapshot
             </a>
             <a
               href="#snapshot"
-              className="inline-flex items-center justify-center border border-border text-foreground px-8 py-3.5 rounded-full font-medium text-base hover:bg-secondary transition-colors w-full sm:w-auto"
+              className="inline-flex items-center justify-center border border-border text-foreground px-8 py-4 rounded-xl font-medium text-base hover:bg-secondary transition-colors w-full sm:w-auto font-sans"
             >
               Book a Call
             </a>
@@ -66,7 +72,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="mt-5 flex items-start gap-2 text-sm text-muted-foreground"
+            className="mt-5 flex items-start gap-2 text-sm text-muted-foreground font-sans"
           >
             <svg className="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -82,10 +88,10 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 1 }}
           className="mt-16 border-t border-border pt-8"
         >
-          <div className="flex flex-wrap gap-6 md:gap-10">
+          <div className="flex flex-wrap gap-x-6 gap-y-3 md:gap-x-10">
             {aiTools.map((tool, i) => (
-              <div key={i} className="flex items-center gap-2">
-                <span className="text-sm font-medium text-foreground">{tool.name}</span>
+              <div key={i} className="flex items-center gap-2 font-sans">
+                <span className="text-sm font-semibold text-foreground">{tool.name}</span>
                 <span className="text-xs text-muted-foreground">· {tool.desc}</span>
               </div>
             ))}

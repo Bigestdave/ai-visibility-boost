@@ -31,8 +31,11 @@ const Header = () => {
         }`}
       >
         <div className="container-page flex items-center justify-between h-16">
-          <a href="#" className="text-xl font-semibold tracking-tight text-foreground">
-            Citeable
+          <a href="#" className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-lg bg-foreground flex items-center justify-center">
+              <span className="text-background font-serif text-lg font-bold leading-none">"</span>
+            </div>
+            <span className="text-lg font-semibold tracking-tight text-foreground font-sans">Citeable</span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium text-muted-foreground">
             <a href="#how-it-works" className="hover:text-foreground transition-colors">How It Works</a>
@@ -83,7 +86,7 @@ const Header = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(/ /g, "-")}`}
-                className="text-2xl font-semibold text-foreground"
+                className="text-2xl font-serif font-semibold text-foreground"
                 onClick={() => setMobileOpen(false)}
               >
                 {item}
