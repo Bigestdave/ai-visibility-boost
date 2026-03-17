@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
-        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace'],
+        sans: ["'DM Sans'", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        serif: ["'Instrument Serif'", "Georgia", "serif"],
+        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -56,6 +56,8 @@ export default {
           DEFAULT: "hsl(var(--surface-dark))",
           foreground: "hsl(var(--surface-dark-foreground))",
         },
+        "ink-2": "hsl(var(--ink-2))",
+        "ink-3": "hsl(var(--ink-3))",
         success: "hsl(var(--success))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -72,6 +74,14 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "var(--radius-lg)",
+        "2xl": "var(--radius-xl)",
+      },
+      boxShadow: {
+        xs: "0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04)",
+        sm: "0 4px 12px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.04)",
+        md: "0 8px 30px rgba(0,0,0,.09), 0 3px 8px rgba(0,0,0,.05)",
+        lg: "0 20px 60px rgba(0,0,0,.12), 0 6px 20px rgba(0,0,0,.06)",
       },
       keyframes: {
         "accordion-down": {
