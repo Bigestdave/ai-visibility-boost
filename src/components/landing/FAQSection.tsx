@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     q: "What exactly is AI search visibility?",
-    a: "It's how your company appears when buyers use tools like ChatGPT, Perplexity, Gemini, and AI-driven search experiences to research software, compare products, and validate options.",
+    a: "It's how your company appears when buyers use tools like ChatGPT, Perplexity, Gemini, and AI-driven search experiences to research software, compare products, and validate shortlists. If those tools describe your product inaccurately, incompletely, or not at all — you lose influence over the evaluation before a prospect ever reaches your site.",
   },
   {
     q: "Do you guarantee rankings or mentions in AI tools?",
@@ -32,7 +32,7 @@ const FAQSection = () => {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="section-padding" style={{ background: "hsl(var(--background))" }}>
+    <section id="faq" className="section-padding bg-background">
       <div className="container-page max-w-[720px]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -41,7 +41,6 @@ const FAQSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <p className="label-overline mb-4">FAQ</p>
           <h2 className="heading-section text-foreground">Frequently asked questions</h2>
         </motion.div>
 
@@ -59,13 +58,15 @@ const FAQSection = () => {
                 onClick={() => setOpen(open === i ? null : i)}
                 className="w-full flex items-center justify-between py-6 text-left group"
               >
-                <span className="text-lg font-semibold text-foreground pr-4">{faq.q}</span>
-                <span
-                  className={`text-muted-foreground flex-shrink-0 text-xl transition-transform duration-300 ${
-                    open === i ? "rotate-45" : ""
-                  }`}
-                >
-                  +
+                <span className="text-base font-semibold text-foreground pr-4">{faq.q}</span>
+                <span className="w-8 h-8 rounded-full border border-border flex items-center justify-center flex-shrink-0">
+                  <span
+                    className={`text-muted-foreground text-lg transition-transform duration-300 ${
+                      open === i ? "rotate-45" : ""
+                    }`}
+                  >
+                    +
+                  </span>
                 </span>
               </button>
               <AnimatePresence>

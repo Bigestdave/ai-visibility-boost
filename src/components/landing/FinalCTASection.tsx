@@ -2,10 +2,8 @@ import { motion } from "framer-motion";
 
 const FinalCTASection = () => {
   return (
-    <section className="py-20 md:py-[100px] relative overflow-hidden" style={{
-      background: "linear-gradient(160deg, #1B1642 0%, #2D2B6B 60%, #4F46E5 100%)",
-    }}>
-      <div className="container-page relative z-10">
+    <section className="section-padding bg-background">
+      <div className="container-page">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -13,30 +11,30 @@ const FinalCTASection = () => {
           transition={{ duration: 0.5 }}
           className="max-w-[640px] mx-auto text-center"
         >
-          <h2 className="heading-section text-white">
-            See how AI is representing your company
+          <h2 className="heading-section text-foreground">
+            Want to see how AI tools are representing your company?
           </h2>
-          <p className="mt-5 text-xl text-white/70 leading-relaxed">
+          <p className="mt-5 text-body-lg text-muted-foreground">
             Request a free AI Visibility Snapshot. We'll show you where your brand stands, where competitors are winning, and what to fix first.
           </p>
 
-          <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
               href="#snapshot"
-              className="inline-flex items-center justify-center bg-white text-[#1B1642] px-9 py-4 rounded-lg font-semibold text-base shadow-[0_0_30px_rgba(99,102,241,0.2)] hover:shadow-[0_0_50px_rgba(99,102,241,0.35)] hover:-translate-y-0.5 transition-all w-full sm:w-auto"
+              className="inline-flex items-center justify-center bg-foreground text-background px-8 py-3.5 rounded-full font-medium text-base hover:opacity-90 transition-opacity w-full sm:w-auto"
             >
               Get My Free AI Visibility Snapshot
             </a>
             <a
               href="#snapshot"
-              className="inline-flex items-center justify-center text-white/80 hover:text-white font-semibold text-base gap-2 group transition-colors py-4"
+              className="inline-flex items-center justify-center border border-border text-foreground px-8 py-3.5 rounded-full font-medium text-base hover:bg-secondary transition-colors w-full sm:w-auto"
             >
-              Book a Call <span className="group-hover:translate-x-1 transition-transform">→</span>
+              Book a Call
             </a>
           </div>
 
-          <p className="mt-4 text-sm text-white/40">
-            Free · No commitment · Delivered in 3–5 business days
+          <p className="mt-4 text-xs text-muted-foreground uppercase tracking-wide font-medium">
+            Free · No pitch call needed
           </p>
         </motion.div>
       </div>

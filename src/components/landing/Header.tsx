@@ -10,7 +10,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-      setPastHero(window.scrollY > window.innerHeight * 0.8);
+      setPastHero(window.scrollY > window.innerHeight * 0.7);
       const formEl = document.getElementById("snapshot");
       if (formEl) {
         const rect = formEl.getBoundingClientRect();
@@ -26,7 +26,7 @@ const Header = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${
           scrolled
-            ? "bg-white/80 backdrop-blur-2xl border-b border-border"
+            ? "bg-background/90 backdrop-blur-2xl border-b border-border"
             : "bg-transparent"
         }`}
       >
@@ -35,25 +35,18 @@ const Header = () => {
             Citeable
           </a>
           <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium text-muted-foreground">
-            <a href="#how-it-works" className="hover:text-primary transition-colors">How It Works</a>
-            <a href="#sprint" className="hover:text-primary transition-colors">Sprint</a>
-            <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
+            <a href="#how-it-works" className="hover:text-foreground transition-colors">How It Works</a>
+            <a href="#sprint" className="hover:text-foreground transition-colors">Sprint</a>
+            <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
           </nav>
           <div className="hidden md:flex items-center gap-3">
             <a
               href="#snapshot"
-              className="text-[15px] font-semibold text-muted-foreground hover:text-primary transition-colors"
-            >
-              Book a Call
-            </a>
-            <a
-              href="#snapshot"
-              className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:shadow-[0_4px_12px_rgba(79,70,229,0.3)] hover:-translate-y-px transition-all"
+              className="bg-foreground text-background px-5 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
             >
               Get Free Snapshot
             </a>
           </div>
-          {/* Mobile hamburger */}
           <button
             className="md:hidden p-2 text-foreground"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -70,14 +63,13 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile menu overlay */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[999] bg-white flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-[999] bg-background flex flex-col items-center justify-center gap-8"
           >
             <button
               className="absolute top-5 right-6 p-2 text-foreground"
@@ -99,7 +91,7 @@ const Header = () => {
             ))}
             <a
               href="#snapshot"
-              className="mt-4 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-base font-semibold w-64 text-center"
+              className="mt-4 bg-foreground text-background px-8 py-4 rounded-full text-base font-medium w-64 text-center"
               onClick={() => setMobileOpen(false)}
             >
               Get Free Snapshot
@@ -116,15 +108,15 @@ const Header = () => {
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed bottom-0 left-0 right-0 z-[999] bg-white/92 backdrop-blur-2xl border-t border-border py-3 px-6"
+            className="fixed bottom-0 left-0 right-0 z-[999] bg-background/95 backdrop-blur-2xl border-t border-border py-3 px-6"
           >
             <div className="container-page flex items-center justify-center gap-4">
-              <span className="hidden sm:inline text-[15px] font-medium text-muted-foreground">
-                See how AI tools describe your software
+              <span className="hidden sm:inline text-sm text-muted-foreground">
+                AI buyers can't find you.
               </span>
               <a
                 href="#snapshot"
-                className="bg-primary text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold hover:shadow-[0_4px_12px_rgba(79,70,229,0.3)] transition-all sm:w-auto w-full text-center"
+                className="bg-foreground text-background px-6 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-opacity sm:w-auto w-full text-center"
               >
                 Get Free Snapshot
               </a>
