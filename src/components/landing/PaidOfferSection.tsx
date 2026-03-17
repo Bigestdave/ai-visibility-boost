@@ -1,83 +1,65 @@
-import { motion } from "framer-motion";
-
-const included = [
+const features = [
   "High-intent query and competitor review",
-  "One or two comparison pages (vs competitor)",
+  "1–2 comparison pages (vs. competitors)",
   "Product facts, use-case, or alternatives page",
   "FAQ and content structure improvements",
-  "Machine-readable formatting & structured data",
+  "Structured data and machine-readable formatting recommendations",
   "Internal linking and page clarity improvements",
-  "Post-launch review and recommendations",
+  "Post-launch review",
 ];
 
 const PaidOfferSection = () => {
   return (
-    <section id="sprint" className="section-padding bg-dark">
+    <section id="sprint" className="section-padding px-7 section-dark">
       <div className="container-page">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="max-w-[680px]"
-        >
-          <div className="w-10 h-[3px] bg-white/30 rounded-full mb-8" />
-          <h2 className="heading-section text-white">
-            AI Search Visibility Sprint
-          </h2>
-          <p className="mt-4 text-body-lg text-white/60 font-sans">
-            A fixed-scope implementation sprint for B2B SaaS companies that want to improve how AI systems interpret and cite their product — not a retainer, not a mystery engagement.
-          </p>
-
-          <div className="mt-8 border border-white/15 rounded-xl p-6">
-            <p className="text-base text-white/70 leading-relaxed font-sans">
-              After the free snapshot, we implement the highest-priority improvements for your company in a focused sprint.{" "}
-              <span className="font-semibold text-white">Most projects complete in 7–10 business days.</span>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-12 items-start">
+          {/* Left copy */}
+          <div className="reveal below-fold">
+            <div className="w-10 h-[2px] bg-primary/40 mb-6" />
+            <h2 className="display-lg text-white mb-5">AI Search Visibility Sprint</h2>
+            <p className="text-lg-body !text-white/60 mb-5">
+              A fixed-scope implementation sprint for B2B SaaS companies ready to improve how AI systems interpret and cite their product.
             </p>
-          </div>
-        </motion.div>
 
-        {/* Pricing card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="mt-12 max-w-[560px]"
-        >
-          <div className="rounded-2xl bg-white/[0.06] border border-white/10 p-8 md:p-10">
-            <p className="text-5xl md:text-6xl font-light text-white/80 tracking-tight font-serif">$2,500</p>
-            <p className="mt-2 text-sm text-white/40 font-sans">Fixed scope · No retainer · Starting price</p>
-          </div>
-
-          <div className="mt-10">
-            <p className="text-xs font-semibold uppercase tracking-widest text-white/50 mb-6 font-sans">What's included</p>
-            <div className="space-y-5">
-              {included.map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-sm text-white/80 font-sans">{item}</span>
-                </div>
-              ))}
+            <div className="mt-7 p-5 border border-white/10 rounded-lg text-sm !text-white/55 leading-relaxed">
+              After the free snapshot, we implement the highest-priority improvements in a focused sprint. <strong className="!text-white/90 font-medium">Most projects complete in 7–10 business days.</strong>
             </div>
           </div>
 
-          <div className="mt-10">
+          {/* Right card */}
+          <div className="reveal below-fold reveal-delay-2 bg-[#17171C] border border-[#232329] rounded-2xl p-10 shadow-lg relative overflow-hidden">
+            {/* Top shine */}
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+
+            <p className="font-serif text-[52px] leading-none text-white tracking-[-0.025em] mb-1.5">$2,500</p>
+            <p className="text-sm text-white/40 mb-8">Fixed scope · Typically 7–10 business days</p>
+
+            <p className="text-[11px] font-medium tracking-[0.07em] uppercase text-white/35 mb-4">What's included</p>
+
+            <div className="flex flex-col gap-[11px] mb-9">
+              {features.map((item, i) => (
+                <div key={i} className="flex items-start gap-[11px] text-[14.5px] text-white/75 leading-relaxed">
+                  <div className="w-[18px] h-[18px] rounded-full bg-primary/25 border border-primary/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-[9px] h-[9px] text-[#6b9fff]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  {item}
+                </div>
+              ))}
+            </div>
+
             <a
               href="#snapshot"
-              className="inline-flex items-center justify-center bg-primary text-white px-8 py-4 rounded-xl font-medium text-base hover:opacity-90 transition-opacity w-full sm:w-auto font-sans"
+              className="w-full inline-flex items-center justify-center gap-2 text-base font-medium rounded-lg py-4 bg-primary text-white shadow-[0_1px_2px_rgba(36,82,232,.3),inset_0_1px_0_rgba(255,255,255,.12)] hover:bg-[#3460F0] hover:-translate-y-px hover:shadow-[0_8px_24px_rgba(36,82,232,.28)] transition-all duration-200"
             >
               Book a Call
             </a>
-            <p className="mt-4 text-sm text-white/40 text-center sm:text-left font-sans">
-              No retainer. No long-term commitment. One focused sprint.
+            <p className="mt-3.5 text-center text-[12.5px] text-white/30">
+              Free snapshot first — no commitment required
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

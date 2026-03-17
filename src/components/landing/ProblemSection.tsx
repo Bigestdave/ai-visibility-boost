@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const queries = [
   "\"What's the best software for this use case?\"",
   "\"[Brand] vs [Competitor] — which is better?\"",
@@ -11,58 +9,37 @@ const queries = [
 
 const ProblemSection = () => {
   return (
-    <section id="problem" className="section-padding bg-warm">
+    <section id="problem" className="section-padding px-7 section-alt">
       <div className="container-page">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="max-w-[680px]"
-        >
-          <div className="accent-line mb-8" />
-          <h2 className="heading-section text-foreground">
-            AI search is already influencing buying decisions
+        <div className="section-header mb-14">
+          <div className="accent-line mb-6 reveal below-fold" />
+          <h2 className="display-lg text-foreground reveal below-fold reveal-delay-1">
+            AI search is already<br />influencing buying decisions
           </h2>
-          <p className="mt-6 text-body-lg text-muted-foreground font-sans">
-            When buyers research software today, they're no longer relying only on Google. They're asking AI tools direct buying questions — before they ever land on your site.
-          </p>
-        </motion.div>
-
-        {/* Queries with blue dots */}
-        <div className="mt-12 max-w-[680px]">
-          {queries.map((query, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="border-t border-border/60"
-            >
-              <div className="py-5 flex items-start gap-4">
-                <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2" />
-                <p className="text-base italic text-foreground font-sans">{query}</p>
-              </div>
-            </motion.div>
-          ))}
-          <div className="border-t border-border/60" />
         </div>
 
-        {/* Callout card with blue left border */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12 max-w-[560px]"
-        >
-          <div className="border-l-[3px] border-primary bg-background rounded-xl p-6 shadow-sm">
-            <p className="text-base text-muted-foreground leading-relaxed font-sans">
-              If your product is <span className="font-semibold text-foreground">missing, poorly explained, or outmatched by competitors</span> in those answers, you may be losing buyer trust before a prospect ever books a demo.
-            </p>
-          </div>
-        </motion.div>
+        <div className="max-w-[680px] reveal below-fold reveal-delay-2">
+          <p className="text-lg-body mb-12">
+            When buyers research software today, they're no longer relying only on Google. They're asking AI tools direct buying questions — before they ever land on your site.
+          </p>
+        </div>
+
+        {/* Query list */}
+        <div className="flex flex-col mt-9 border-t border-border max-w-[680px]">
+          {queries.map((query, i) => (
+            <div key={i} className={`reveal below-fold reveal-delay-${Math.min(i + 1, 6)} flex items-center gap-4 py-4 border-b border-border`}>
+              <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 ml-1" />
+              <p className="text-[15px] leading-relaxed text-ink-2 italic">{query}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Conclusion card */}
+        <div className="reveal below-fold mt-12 max-w-[640px] p-7 bg-white border border-border rounded-[var(--radius-lg)] border-l-[3px] border-l-primary">
+          <p className="text-base text-ink-2 leading-[1.7]">
+            If your product is <strong className="text-foreground font-medium">missing, poorly explained, or outmatched by competitors</strong> in those answers, you may be losing buyer trust before a prospect ever books a demo.
+          </p>
+        </div>
       </div>
     </section>
   );

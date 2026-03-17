@@ -1,63 +1,47 @@
-import { motion } from "framer-motion";
-
 const steps = [
   {
     num: 1,
-    title: "We audit your AI visibility",
-    desc: "We run your company through ChatGPT, Perplexity, and similar AI tools using the exact buyer-intent queries your prospects are asking.",
+    title: "Audit your AI visibility",
+    desc: "We check how your company appears in ChatGPT, Perplexity, and AI tools for buyer-intent queries.",
   },
   {
     num: 2,
-    title: "We identify the gaps",
-    desc: "We find where your product is missing, misunderstood, under-cited, or losing ground to competitors in AI-generated answers.",
+    title: "Identify the gaps",
+    desc: "We find where your product is missing, misrepresented, or losing to competitors.",
   },
   {
     num: 3,
-    title: "We implement the fixes",
-    desc: "We build and improve the pages, comparisons, and content structures that help AI systems accurately understand and surface your product.",
+    title: "Implement the fixes",
+    desc: "We build the pages, comparisons, and content structures that help AI systems surface your product.",
   },
   {
     num: 4,
-    title: "You improve buyer-facing visibility",
-    desc: "Your team gets a stronger foundation for how your software is represented during AI-driven research — where modern shortlisting happens.",
+    title: "Improve buyer visibility",
+    desc: "Your product is more accurately represented in AI-driven research and evaluation.",
   },
 ];
 
 const HowItWorksSection = () => {
   return (
-    <section id="how-it-works" className="section-padding bg-warm">
+    <section id="how-it-works" className="section-padding px-7 bg-background">
       <div className="container-page">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-[640px] mx-auto"
-        >
-          <div className="accent-line mx-auto mb-8" />
-          <h2 className="heading-section text-foreground">How it works</h2>
-          <p className="mt-4 text-body-lg text-muted-foreground font-sans">
-            From free audit to production-ready pages — a clear, four-step process.
-          </p>
-        </motion.div>
+        <div className="section-header section-header--center text-center mb-14">
+          <div className="accent-line mx-auto mb-6 reveal below-fold" />
+          <h2 className="display-lg text-foreground reveal below-fold reveal-delay-1">How it works</h2>
+        </div>
 
-        <div className="mt-16 max-w-[640px] mx-auto space-y-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          {/* Connector line - desktop only */}
+          <div className="hidden lg:block absolute top-[44px] left-[calc(12.5%+16px)] right-[calc(12.5%+16px)] h-px bg-gradient-to-r from-border via-primary to-border" />
+
           {steps.map((step, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              <div className="w-14 h-14 rounded-full bg-background border border-border flex items-center justify-center mb-5">
-                <span className="text-xl font-light text-muted-foreground font-sans">{step.num}</span>
+            <div key={i} className={`reveal below-fold reveal-delay-${Math.min(i + 1, 6)} relative group`}>
+              <div className="w-[52px] h-[52px] rounded-full bg-white border border-border flex items-center justify-center mb-6 relative z-[1] shadow-xs transition-colors duration-200 group-hover:bg-primary group-hover:border-primary">
+                <span className="font-serif text-xl text-ink-3 transition-colors duration-200 group-hover:text-white">{step.num}</span>
               </div>
-              <h4 className="text-lg font-semibold text-foreground font-sans">{step.title}</h4>
-              <p className="mt-2 text-[15px] text-muted-foreground leading-relaxed font-sans">
-                {step.desc}
-              </p>
-            </motion.div>
+              <h4 className="text-base font-medium text-foreground mb-2.5 leading-snug">{step.title}</h4>
+              <p className="text-[14.5px] text-ink-2 leading-relaxed">{step.desc}</p>
+            </div>
           ))}
         </div>
       </div>

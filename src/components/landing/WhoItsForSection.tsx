@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const fitItems = [
   "Buyers compare multiple tools before booking demos",
   "Competitors are winning comparison-based attention in AI",
@@ -18,59 +16,36 @@ const verticals = [
 
 const WhoItsForSection = () => {
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding px-7 section-alt">
       <div className="container-page">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="max-w-[680px]"
-        >
-          <div className="accent-line mb-8" />
-          <h2 className="heading-section text-foreground">Built for B2B SaaS teams</h2>
-          <p className="mt-4 text-body-lg text-muted-foreground font-sans">
-            Especially relevant if your buyers do comparison-based research before booking demos.
-          </p>
-        </motion.div>
+        <div className="section-header mb-12">
+          <div className="accent-line mb-6 reveal below-fold" />
+          <h2 className="display-md text-foreground reveal below-fold reveal-delay-1">Built for B2B SaaS teams</h2>
+        </div>
 
-        <div className="mt-12 max-w-[680px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           {/* Strong fit */}
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2 font-sans">Strong fit if your team…</p>
-            <div className="border-t border-border">
+          <div className="reveal below-fold reveal-delay-2">
+            <p className="text-xs font-medium tracking-[0.07em] uppercase text-ink-3 mb-5">Strong fit if…</p>
+            <div className="flex flex-col">
               {fitItems.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="border-b border-border py-4 flex items-start gap-4"
-                >
-                  <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2" />
-                  <p className="text-base text-foreground font-sans">{item}</p>
-                </motion.div>
+                <div key={i} className="flex items-center gap-3.5 py-3.5 border-b border-border first:border-t text-[15px] text-ink-2 hover:text-foreground transition-colors">
+                  <span className="w-[5px] h-[5px] rounded-full bg-primary flex-shrink-0" />
+                  {item}
+                </div>
               ))}
             </div>
           </div>
 
-          {/* Especially relevant */}
-          <div className="mt-12">
-            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2 font-sans">Especially relevant for…</p>
-            <div className="border-t border-border">
+          {/* Verticals */}
+          <div className="reveal below-fold reveal-delay-3">
+            <p className="text-xs font-medium tracking-[0.07em] uppercase text-ink-3 mb-5">Especially relevant for</p>
+            <div className="flex flex-col">
               {verticals.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="border-b border-border py-4 flex items-start gap-4"
-                >
-                  <span className="w-2 h-2 rounded-full bg-primary/40 flex-shrink-0 mt-2" />
-                  <p className="text-base text-muted-foreground font-sans">{item}</p>
-                </motion.div>
+                <div key={i} className="flex items-center gap-3.5 py-3.5 border-b border-border first:border-t text-[15px] text-ink-2 hover:text-foreground transition-colors">
+                  <span className="w-[5px] h-[5px] rounded-full bg-primary flex-shrink-0" />
+                  {item}
+                </div>
               ))}
             </div>
           </div>

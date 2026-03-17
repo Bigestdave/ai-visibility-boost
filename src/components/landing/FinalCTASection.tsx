@@ -1,43 +1,29 @@
-import { motion } from "framer-motion";
-
 const FinalCTASection = () => {
   return (
-    <section className="section-padding bg-background">
-      <div className="container-page">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="max-w-[640px] mx-auto text-center"
-        >
-          <div className="accent-line mx-auto mb-8" />
-          <h2 className="heading-section text-foreground">
-            Want to see how AI tools are representing your company?
-          </h2>
-          <p className="mt-5 text-body-lg text-muted-foreground font-sans">
-            Request a free AI Visibility Snapshot. We'll show you where your brand stands, where competitors are winning, and what to fix first.
-          </p>
-
-          <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
-              href="#snapshot"
-              className="inline-flex items-center justify-center bg-foreground text-background px-8 py-4 rounded-xl font-medium text-base hover:opacity-90 transition-opacity w-full sm:w-auto font-sans"
-            >
-              Get My Free AI Visibility Snapshot
-            </a>
-            <a
-              href="#snapshot"
-              className="inline-flex items-center justify-center border border-border text-foreground px-8 py-4 rounded-xl font-medium text-base hover:bg-secondary transition-colors w-full sm:w-auto font-sans"
-            >
-              Book a Call
-            </a>
-          </div>
-
-          <p className="mt-4 text-xs text-muted-foreground uppercase tracking-wide font-medium font-sans">
-            Free · No pitch call needed
-          </p>
-        </motion.div>
+    <section className="py-[100px] px-7 text-center bg-background">
+      <div className="max-w-[680px] mx-auto reveal below-fold">
+        <div className="accent-line mx-auto mb-6" />
+        <h2 className="display-lg text-foreground mb-5">
+          Want to see how AI tools are representing your company?
+        </h2>
+        <p className="text-lg-body mb-10 max-w-[520px] mx-auto">
+          Request a free AI Visibility Snapshot. We'll show you where your brand stands, where competitors are winning, and what to fix first.
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-4">
+          <a
+            href="#snapshot"
+            className="inline-flex items-center justify-center gap-2 text-[15px] font-medium tracking-[-0.01em] rounded-lg px-7 py-[15px] bg-foreground text-white shadow-[0_1px_2px_rgba(0,0,0,.2),inset_0_1px_0_rgba(255,255,255,.08)] hover:bg-[#222220] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(0,0,0,.18)] active:translate-y-0 transition-all duration-200"
+          >
+            Get My Free AI Visibility Snapshot
+          </a>
+          <a
+            href="#snapshot"
+            className="inline-flex items-center justify-center gap-2 text-[15px] font-medium tracking-[-0.01em] rounded-lg px-[22px] py-3 bg-transparent text-ink-2 border border-border hover:border-ink-3 hover:text-foreground hover:bg-[hsl(var(--bg-alt))] transition-all duration-200"
+          >
+            Book a Call
+          </a>
+        </div>
+        <p className="text-sm text-ink-3">Free · No pitch call needed</p>
       </div>
     </section>
   );

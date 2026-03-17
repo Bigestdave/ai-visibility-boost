@@ -1,5 +1,7 @@
+import { useReveal } from "@/hooks/useReveal";
 import Header from "@/components/landing/Header";
 import HeroSection from "@/components/landing/HeroSection";
+import ProofStrip from "@/components/landing/ProofStrip";
 import ProblemSection from "@/components/landing/ProblemSection";
 import WhatWeDoSection from "@/components/landing/WhatWeDoSection";
 import FreeOfferSection from "@/components/landing/FreeOfferSection";
@@ -13,11 +15,14 @@ import FormSection from "@/components/landing/FormSection";
 import Footer from "@/components/landing/Footer";
 
 const Index = () => {
+  useReveal();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <main>
         <HeroSection />
+        <ProofStrip />
         <ProblemSection />
         <WhatWeDoSection />
         <FreeOfferSection />

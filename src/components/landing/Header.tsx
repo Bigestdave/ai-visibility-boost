@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [pastHero, setPastHero] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [pastForm, setPastForm] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,110 +22,109 @@ const Header = () => {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${
+      <nav
+        className={`fixed top-0 left-0 right-0 z-[1000] px-7 h-16 flex items-center border-b transition-all duration-300 ${
           scrolled
-            ? "bg-background/90 backdrop-blur-2xl border-b border-border"
-            : "bg-transparent"
+            ? "bg-background/[0.88] backdrop-blur-[16px] backdrop-saturate-[180%] border-border"
+            : "bg-transparent border-transparent"
         }`}
       >
-        <div className="container-page flex items-center justify-between h-16">
+        <div className="w-full max-w-[1200px] mx-auto flex items-center justify-between">
+          {/* Logo */}
           <a href="#" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-lg bg-foreground flex items-center justify-center">
-              <span className="text-background font-serif text-lg font-bold leading-none">"</span>
+            <div className="w-[30px] h-[30px] bg-foreground rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.039 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H10V18H0Z" fill="white" />
+              </svg>
             </div>
-            <span className="text-lg font-semibold tracking-tight text-foreground font-sans">Citeable</span>
+            <span className="font-serif text-[19px] tracking-[-0.02em] text-foreground">Citeable</span>
+            <span className="text-xs text-ink-3 ml-1 font-normal hidden md:inline">— AI Search Optimization for B2B SaaS</span>
           </a>
-          <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium text-muted-foreground">
-            <a href="#how-it-works" className="hover:text-foreground transition-colors">How It Works</a>
-            <a href="#sprint" className="hover:text-foreground transition-colors">Sprint</a>
-            <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
-          </nav>
-          <div className="hidden md:flex items-center gap-3">
+
+          {/* Nav links */}
+          <div className="hidden lg:flex items-center gap-7">
+            <a href="#problem" className="text-sm text-ink-2 hover:text-foreground transition-colors">Problem</a>
+            <a href="#how-it-works" className="text-sm text-ink-2 hover:text-foreground transition-colors">How it works</a>
+            <a href="#sprint" className="text-sm text-ink-2 hover:text-foreground transition-colors">Pricing</a>
+            <a href="#faq" className="text-sm text-ink-2 hover:text-foreground transition-colors">FAQ</a>
+          </div>
+
+          {/* CTA */}
+          <div className="flex items-center gap-2.5">
             <a
               href="#snapshot"
-              className="bg-foreground text-background px-5 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+              className="hidden sm:inline-flex items-center justify-center gap-2 text-[15px] font-medium tracking-[-0.01em] rounded-lg px-[22px] py-3 bg-foreground text-white shadow-[0_1px_2px_rgba(0,0,0,.2),inset_0_1px_0_rgba(255,255,255,.08)] hover:bg-[#222220] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(0,0,0,.18)] active:translate-y-0 transition-all duration-200"
             >
               Get Free Snapshot
             </a>
-          </div>
-          <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Menu"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              {mobileOpen ? (
-                <path strokeLinecap="round" d="M6 6l12 12M6 18L18 6" />
-              ) : (
-                <path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
-      </header>
-
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[999] bg-background flex flex-col items-center justify-center gap-8"
-          >
             <button
-              className="absolute top-5 right-6 p-2 text-foreground"
-              onClick={() => setMobileOpen(false)}
+              className="lg:hidden p-2 text-foreground"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Menu"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" d="M6 6l12 12M6 18L18 6" />
+                {mobileOpen ? (
+                  <path strokeLinecap="round" d="M6 6l12 12M6 18L18 6" />
+                ) : (
+                  <path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />
+                )}
               </svg>
             </button>
-            {["How It Works", "Sprint", "FAQ"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase().replace(/ /g, "-")}`}
-                className="text-2xl font-serif font-semibold text-foreground"
-                onClick={() => setMobileOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile menu overlay */}
+      {mobileOpen && (
+        <div className="fixed inset-0 z-[999] bg-background flex flex-col items-center justify-center gap-8">
+          <button
+            className="absolute top-5 right-6 p-2 text-foreground"
+            onClick={() => setMobileOpen(false)}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" d="M6 6l12 12M6 18L18 6" />
+            </svg>
+          </button>
+          {[
+            { label: "Problem", href: "#problem" },
+            { label: "How it works", href: "#how-it-works" },
+            { label: "Pricing", href: "#sprint" },
+            { label: "FAQ", href: "#faq" },
+          ].map((item) => (
             <a
-              href="#snapshot"
-              className="mt-4 bg-foreground text-background px-8 py-4 rounded-full text-base font-medium w-64 text-center"
+              key={item.label}
+              href={item.href}
+              className="text-2xl font-serif text-foreground"
               onClick={() => setMobileOpen(false)}
             >
-              Get Free Snapshot
+              {item.label}
             </a>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Sticky bottom CTA bar */}
-      <AnimatePresence>
-        {pastHero && !pastForm && (
-          <motion.div
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "100%" }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed bottom-0 left-0 right-0 z-[999] bg-background/95 backdrop-blur-2xl border-t border-border py-3 px-6"
+          ))}
+          <a
+            href="#snapshot"
+            className="mt-4 bg-foreground text-white px-8 py-4 rounded-lg text-base font-medium w-64 text-center"
+            onClick={() => setMobileOpen(false)}
           >
-            <div className="container-page flex items-center justify-center gap-4">
-              <span className="hidden sm:inline text-sm text-muted-foreground">
-                AI buyers can't find you.
-              </span>
-              <a
-                href="#snapshot"
-                className="bg-foreground text-background px-6 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-opacity sm:w-auto w-full text-center"
-              >
-                Get Free Snapshot
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            Get Free Snapshot
+          </a>
+        </div>
+      )}
+
+      {/* Floating CTA bar */}
+      <div
+        className={`fixed bottom-6 left-1/2 -translate-x-1/2 bg-foreground text-white rounded-full py-3.5 px-5 sm:px-6 flex items-center gap-4 shadow-[0_8px_40px_rgba(0,0,0,.25)] z-[999] border border-white/[0.08] whitespace-nowrap transition-transform duration-500 ${
+          pastHero && !pastForm ? "translate-y-0" : "translate-y-[100px]"
+        }`}
+        style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
+      >
+        <span className="text-sm text-white/60 hidden sm:block">AI buyers can't find you.</span>
+        <a
+          href="#snapshot"
+          className="inline-flex items-center justify-center gap-2 text-sm font-medium rounded-lg px-[18px] py-[9px] bg-primary text-white shadow-[0_1px_2px_rgba(36,82,232,.3),inset_0_1px_0_rgba(255,255,255,.12)] hover:bg-[#3460F0] hover:-translate-y-px transition-all duration-200"
+        >
+          Get Free Snapshot
+        </a>
+      </div>
     </>
   );
 };
