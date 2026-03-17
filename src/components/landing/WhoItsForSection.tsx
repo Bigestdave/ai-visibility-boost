@@ -2,84 +2,75 @@ import { motion } from "framer-motion";
 
 const fitItems = [
   "Buyers compare multiple tools before booking demos",
-  "Competitors are winning comparison-based attention",
-  "Your site lacks 'vs,' 'alternatives,' or use-case pages",
-  "Your product is technical, nuanced, or hard to explain",
+  "Competitors are winning comparison-based attention in AI",
+  "Site lacks \"vs,\" \"alternatives,\" or use-case pages",
+  "Product is technical or nuanced to explain clearly",
   "You want to improve how AI tools represent your software",
 ];
 
 const verticals = [
-  "Sales software",
-  "Outbound tools",
-  "HR & Payroll",
-  "Developer tools",
-  "Productivity software",
-  "Workflow & operations",
+  "Sales and outbound software",
+  "HR, payroll, and ops platforms",
+  "Developer tools and infrastructure",
+  "Productivity and workflow SaaS",
+  "Any SaaS with clear, named competitors",
 ];
 
 const WhoItsForSection = () => {
   return (
-    <section className="section-padding" style={{ background: "hsl(var(--background))" }}>
+    <section className="section-padding bg-background">
       <div className="container-page">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-[600px] mx-auto"
+          className="max-w-[680px]"
         >
-          <p className="label-overline mb-4">Ideal Fit</p>
           <h2 className="heading-section text-foreground">Built for B2B SaaS teams</h2>
           <p className="mt-4 text-body-lg text-muted-foreground">
-            This is the right fit if your buyers compare multiple tools before making a decision — and you want to control how your product appears in that process.
+            Especially relevant if your buyers do comparison-based research before booking demos.
           </p>
         </motion.div>
 
-        <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-[900px] mx-auto">
-          {/* Fit criteria card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-card border border-border rounded-2xl p-8"
-          >
-            <h4 className="text-lg font-semibold text-foreground flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-success" />
-              Strong fit if…
-            </h4>
-            <div className="mt-5 space-y-3.5">
+        <div className="mt-12 max-w-[680px]">
+          {/* Strong fit */}
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">Strong fit if your team…</p>
+            <div className="border-t border-border">
               {fitItems.map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <svg className="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-[15px] text-muted-foreground">{item}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Verticals card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-accent rounded-2xl p-8"
-          >
-            <h4 className="text-lg font-semibold text-foreground">Especially relevant for</h4>
-            <div className="mt-5 flex flex-wrap gap-2.5">
-              {verticals.map((v, i) => (
-                <span
+                <motion.div
                   key={i}
-                  className="bg-card border border-border rounded-lg px-4 py-2 text-sm font-medium text-muted-foreground"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  className="border-b border-border py-4"
                 >
-                  {v}
-                </span>
+                  <p className="text-base text-foreground">{item}</p>
+                </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
+
+          {/* Especially relevant */}
+          <div className="mt-12">
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">Especially relevant for…</p>
+            <div className="border-t border-border">
+              {verticals.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  className="border-b border-border py-4"
+                >
+                  <p className="text-base text-muted-foreground">{item}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

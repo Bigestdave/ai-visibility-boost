@@ -1,99 +1,95 @@
 import { motion } from "framer-motion";
 
+const aiTools = [
+  { name: "ChatGPT", desc: "AI search queries" },
+  { name: "Perplexity", desc: "Cited answers" },
+  { name: "Gemini", desc: "Product comparisons" },
+  { name: "Claude", desc: "Buyer research" },
+  { name: "AI Overview", desc: "Google AI results" },
+];
+
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden" style={{
-      background: "linear-gradient(160deg, #0A0A0F 0%, #1B1642 40%, #2D2B6B 100%)",
-    }}>
-      {/* Floating gradient orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full opacity-20 animate-drift" style={{
-          background: "radial-gradient(circle, #4F46E5, transparent 70%)",
-          filter: "blur(80px)",
-        }} />
-        <div className="absolute top-1/2 right-1/4 w-[350px] h-[350px] rounded-full opacity-15 animate-drift-reverse" style={{
-          background: "radial-gradient(circle, #8B5CF6, transparent 70%)",
-          filter: "blur(80px)",
-        }} />
-        <div className="absolute bottom-1/4 left-1/2 w-[300px] h-[300px] rounded-full opacity-10 animate-drift" style={{
-          background: "radial-gradient(circle, #6366F1, transparent 70%)",
-          filter: "blur(80px)",
-        }} />
-      </div>
-
-      <div className="container-page relative z-10 pt-32 pb-24 md:pt-40 md:pb-28">
-        <div className="max-w-[680px] mx-auto text-center">
+    <section className="min-h-[90vh] flex flex-col justify-center pt-24 pb-16 md:pt-32 md:pb-20 bg-background">
+      <div className="container-page">
+        <div className="max-w-[720px]">
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="label-overline text-indigo-300 mb-5 flex items-center justify-center gap-2"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-sm text-muted-foreground mb-6"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
-            AI Search Visibility for B2B SaaS
+            New category · AI Search Optimization
           </motion.p>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="heading-display text-white"
+            className="heading-display text-foreground"
           >
-            Your buyers are asking AI about your software.
+            Your buyers are asking{" "}
+            <br className="hidden sm:block" />
+            <span className="text-muted-foreground">AI</span> about your software.
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-6 text-body-lg text-white/70 max-w-[580px] mx-auto"
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-8 text-body-lg text-muted-foreground max-w-[600px]"
           >
-            We help B2B SaaS companies improve how they appear in ChatGPT, Perplexity, and AI search — by fixing the pages, facts, and content structures these systems rely on during evaluation.
+            We help B2B SaaS companies improve how they appear in ChatGPT, Perplexity, and AI search — by fixing the pages, facts, and content structures AI systems rely on during software evaluation.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="mt-10 flex flex-col sm:flex-row items-start gap-3"
           >
             <a
               href="#snapshot"
-              className="inline-flex items-center justify-center bg-white text-[#1B1642] px-9 py-4 rounded-lg font-semibold text-base shadow-[0_0_30px_rgba(99,102,241,0.2)] hover:shadow-[0_0_50px_rgba(99,102,241,0.35)] hover:-translate-y-0.5 transition-all w-full sm:w-auto"
+              className="inline-flex items-center justify-center bg-foreground text-background px-8 py-3.5 rounded-full font-medium text-base hover:opacity-90 transition-opacity w-full sm:w-auto"
             >
               Get My Free AI Visibility Snapshot
             </a>
             <a
               href="#snapshot"
-              className="inline-flex items-center justify-center text-white/80 hover:text-white font-semibold text-base gap-2 group transition-colors py-4"
+              className="inline-flex items-center justify-center border border-border text-foreground px-8 py-3.5 rounded-full font-medium text-base hover:bg-secondary transition-colors w-full sm:w-auto"
             >
-              Book a Call <span className="group-hover:translate-x-1 transition-transform">→</span>
+              Book a Call
             </a>
           </motion.div>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-5 text-sm text-white/40 max-w-[480px] mx-auto"
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="mt-5 flex items-start gap-2 text-sm text-muted-foreground"
           >
-            See how AI tools currently describe your company — where competitors are winning and what to fix first.
-          </motion.p>
+            <svg className="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>See how AI tools describe your company, where competitors are winning, and what to fix first.</span>
+          </motion.div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* AI Tools strip */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1 }}
+          className="mt-16 border-t border-border pt-8"
         >
-          <svg
-            className="w-5 h-5 text-white/20 animate-bounce-gentle"
-            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
+          <div className="flex flex-wrap gap-6 md:gap-10">
+            {aiTools.map((tool, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <span className="text-sm font-medium text-foreground">{tool.name}</span>
+                <span className="text-xs text-muted-foreground">· {tool.desc}</span>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
