@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+
 const items = [
   "Understand how ChatGPT, Perplexity, and AI tools describe your product today",
   "Identify where competitors are appearing more strongly in buyer queries",
@@ -8,9 +10,9 @@ const items = [
 
 const platforms = [
   { name: "ChatGPT", dot: "#10a37f", badge: "Partial", level: 45 },
-  { name: "Perplexity", dot: "#1c7ed6", badge: "Missing", level: 0 },
+  { name: "Perplexity", dot: "#1c7ed6", badge: "Missing", level: 8 },
   { name: "Gemini", dot: "#8b5cf6", badge: "Weak", level: 20 },
-  { name: "Claude", dot: "#0ea5e9", badge: "Missing", level: 0 },
+  { name: "Claude", dot: "#0ea5e9", badge: "Missing", level: 5 },
   { name: "AI Overviews", dot: "#f59e0b", badge: "Partial", level: 40 },
 ];
 
@@ -19,19 +21,34 @@ const competitorPlatforms = [
   { name: "Perplexity", dot: "#1c7ed6", badge: "Cited", level: 85 },
 ];
 
-const badgeColor = (badge: string) => {
-  if (badge === "Strong" || badge === "Cited") return "text-[#166534]";
-  if (badge === "Partial" || badge === "Weak") return "text-[#92400E]";
-  return "text-[#991B1B]";
-};
-
 const barColor = (badge: string) => {
-  if (badge === "Strong" || badge === "Cited") return "#16A34A";
+  if (badge === "Strong" || badge === "Cited") return "#22C55E";
   if (badge === "Partial" || badge === "Weak") return "#F59E0B";
   return "#EF4444";
 };
 
 const WhatWeDoSection = () => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="section-padding px-7 bg-background">
       <div className="container-page">
@@ -64,9 +81,9 @@ const WhatWeDoSection = () => {
           </div>
 
           {/* Right - Visibility Dashboard */}
-          <div className="reveal below-fold reveal-delay-4">
+          <div className="reveal below-fold reveal-delay-4" ref={cardRef}>
             <div className="relative rounded-[20px] overflow-hidden" style={{ background: 'linear-gradient(145deg, #0C0C10 0%, #1a1a22 100%)' }}>
-              {/* Top bar - like a terminal/app window */}
+              {/* Top bar */}
               <div className="flex items-center gap-2 px-6 pt-5 pb-4">
                 <span className="w-[7px] h-[7px] rounded-full bg-[#EF4444]/70" />
                 <span className="w-[7px] h-[7px] rounded-full bg-[#F59E0B]/70" />
@@ -80,18 +97,26 @@ const WhatWeDoSection = () => {
                 <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-white/30 mb-3">Your brand</p>
                 <div className="space-y-[1px]">
                   {platforms.map((p, i) => (
-                    <div key={i} className="flex items-center gap-3 py-[10px] group">
+                    <div key={i} className="flex items-center gap-3 py-[10px]">
                       <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: p.dot }} />
                       <span className="text-[13px] text-white/70 font-medium w-[100px] flex-shrink-0">{p.name}</span>
-                      {/* Visibility bar */}
                       <div className="flex-1 h-[3px] rounded-full bg-white/[0.06] overflow-hidden">
                         <div
-                          className="h-full rounded-full transition-all duration-1000"
-                          style={{ width: `${p.level}%`, background: barColor(p.badge) }}
+                          className="h-full rounded-full"
+                          style={{
+                            width: isVisible ? `${p.level}%` : '0%',
+                            background: barColor(p.badge),
+                            transition: `width 1.2s cubic-bezier(.16,1,.3,1) ${i * 0.15}s`,
+                          }}
                         />
                       </div>
-                      <span className={`text-[11px] font-medium w-[52px] text-right ${badgeColor(p.badge).replace('text-', 'text-').replace('#166534', 'white/50').replace('#92400E', '[#F59E0B]').replace('#991B1B', '[#EF4444]/70')}`}
-                        style={{ color: barColor(p.badge) }}
+                      <span
+                        className="text-[11px] font-medium w-[52px] text-right transition-opacity duration-500"
+                        style={{
+                          color: barColor(p.badge),
+                          opacity: isVisible ? 1 : 0,
+                          transitionDelay: `${i * 0.15 + 0.6}s`,
+                        }}
                       >
                         {p.badge}
                       </span>
@@ -99,7 +124,6 @@ const WhatWeDoSection = () => {
                   ))}
                 </div>
 
-                {/* Divider */}
                 <div className="h-px bg-white/[0.06] my-4" />
 
                 {/* Competitor */}
@@ -112,16 +136,27 @@ const WhatWeDoSection = () => {
                       <div className="flex-1 h-[3px] rounded-full bg-white/[0.06] overflow-hidden">
                         <div
                           className="h-full rounded-full"
-                          style={{ width: `${p.level}%`, background: '#22C55E' }}
+                          style={{
+                            width: isVisible ? `${p.level}%` : '0%',
+                            background: '#22C55E',
+                            transition: `width 1.2s cubic-bezier(.16,1,.3,1) ${(i + platforms.length) * 0.15}s`,
+                          }}
                         />
                       </div>
-                      <span className="text-[11px] font-medium w-[52px] text-right text-[#22C55E]">{p.badge}</span>
+                      <span
+                        className="text-[11px] font-medium w-[52px] text-right text-[#22C55E] transition-opacity duration-500"
+                        style={{
+                          opacity: isVisible ? 1 : 0,
+                          transitionDelay: `${(i + platforms.length) * 0.15 + 0.6}s`,
+                        }}
+                      >
+                        {p.badge}
+                      </span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Bottom note */}
               <div className="px-6 py-3 border-t border-white/[0.05] bg-white/[0.02]">
                 <p className="text-[11px] text-white/25 italic">Example snapshot output — your results may vary</p>
               </div>
