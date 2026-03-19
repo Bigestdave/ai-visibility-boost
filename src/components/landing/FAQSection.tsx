@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "Who is this for?",
-    a: "Any B2B company where one new client is worth $5,000 or more. Agencies, consultants, SaaS companies, law firms, professional services — if buyers compare options before hiring, this is for you.",
+    a: "Any B2B company where one new client is worth $5,000 or more. Agencies, consultants, SaaS companies, law firms, professional services: if buyers compare options before hiring, this is for you.",
   },
 ];
 

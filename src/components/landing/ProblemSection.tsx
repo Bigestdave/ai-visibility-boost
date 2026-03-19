@@ -20,7 +20,7 @@ const ProblemSection = () => {
 
         <div className="max-w-[680px] reveal below-fold reveal-delay-2">
           <p className="text-lg-body mb-12">
-            Before a prospect ever visits your website or books a call, they're asking ChatGPT and Perplexity who they should work with. If the AI doesn't know you — or worse, recommends your competitor — you've already lost the deal.
+            Before a prospect ever visits your website or books a call, they're asking ChatGPT and Perplexity who they should work with. If the AI doesn't know you, or worse, recommends your competitor, you've already lost the deal.
           </p>
         </div>
 

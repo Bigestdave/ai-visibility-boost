@@ -33,7 +33,7 @@ const FormSection = () => {
             {[
               { icon: "shield", text: "Your information is kept confidential" },
               { icon: "clock", text: "Takes less than 2 minutes to complete" },
-              { icon: "chart", text: "Limited spots — we cap reviews each week" },
+              { icon: "chart", text: "Limited spots: we cap reviews each week" },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2.5 text-sm text-ink-3">
                 <svg className="w-4 h-4 text-success flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

@@ -67,7 +67,7 @@ const HeroSection = () => {
               <circle cx="12" cy="12" r="6" />
               <circle cx="12" cy="12" r="2" />
             </svg>
-            See What AI Says About You — Free
+            See What AI Says About You (Free)
           </a>
           <a
             href="#snapshot"

@@ -44,7 +44,7 @@ const FreeOfferSection = () => {
               </svg>
               Free · No commitment
             </span>
-            <h2 className="display-md text-foreground mt-5">See What AI Is Saying About You — Free</h2>
+            <h2 className="display-md text-foreground mt-5">See What AI Is Saying About You (Free)</h2>
             <p className="text-lg-body mt-4 max-w-[560px] mx-auto">
               We'll ask AI the same questions your buyers are asking, and show you exactly what it says about your company. No charge, no commitment.
             </p>

@@ -17,7 +17,7 @@ const steps = [
   {
     num: 4,
     title: "AI starts recommending you",
-    desc: "When buyers ask AI who to hire, your company shows up — with accurate facts and a clear reason to choose you.",
+    desc: "When buyers ask AI who to hire, your company shows up with accurate facts and a clear reason to choose you.",
   },
 ];
 

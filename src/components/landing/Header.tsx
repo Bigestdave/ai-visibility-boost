@@ -38,7 +38,7 @@ const Header = () => {
               </svg>
             </div>
             <span className="font-serif text-[19px] tracking-[-0.02em] text-foreground">Citeable</span>
-            <span className="text-xs text-ink-3 ml-1 font-normal hidden md:inline">— Get Recommended by AI</span>
+            <span className="text-xs text-ink-3 ml-1 font-normal hidden md:inline">· Get Recommended by AI</span>
           </a>
 
           {/* Nav links */}
