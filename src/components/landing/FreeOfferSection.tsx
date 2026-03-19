@@ -16,7 +16,7 @@ const snapshotItems = [
   },
   {
     title: "What to fix first",
-    desc: "A clear, prioritized list of the highest-impact changes — no 40-page report",
+    desc: "A clear, prioritized list of the highest-impact changes. No 40-page report",
     num: "04",
   },
   {
@@ -26,7 +26,7 @@ const snapshotItems = [
   },
   {
     title: "Plain-English teardown",
-    desc: "Everything explained simply — no jargon, no fluff, just what matters",
+    desc: "Everything explained simply. No jargon, no fluff, just what matters",
     num: "06",
   },
 ];
@@ -44,7 +44,7 @@ const FreeOfferSection = () => {
               </svg>
               Free · No commitment
             </span>
-            <h2 className="display-md text-foreground mt-5">See What AI Is Saying About You — Free</h2>
+            <h2 className="display-md text-foreground mt-5">See What AI Is Saying About You (Free)</h2>
             <p className="text-lg-body mt-4 max-w-[560px] mx-auto">
               We'll ask AI the same questions your buyers are asking, and show you exactly what it says about your company. No charge, no commitment.
             </p>

@@ -63,7 +63,7 @@ const WhatWeDoSection = () => {
               Your website was built for Google and human visitors. But ChatGPT, Perplexity, and other AI tools read your site differently. If they can't find clear facts, comparisons, and case studies, they'll recommend someone else.
             </p>
             <p className="text-lg-body mb-6 reveal below-fold reveal-delay-2">
-              We fix the code and content on your site so AI tools can actually understand what you do — and start telling buyers to choose you.
+              We fix the code and content on your site so AI tools can actually understand what you do, and start telling buyers to choose you.
             </p>
 
             <div className="flex flex-col gap-3.5 reveal below-fold reveal-delay-3">

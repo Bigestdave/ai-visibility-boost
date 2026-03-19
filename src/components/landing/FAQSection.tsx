@@ -3,7 +3,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "What do you actually do?",
-    a: "We fix your website so that when buyers ask ChatGPT, Perplexity, or other AI tools who they should hire, the AI recommends you — not your competitor. We do this by adding the right pages, facts, and hidden code that AI tools need to understand your company.",
+    a: "We fix your website so that when buyers ask ChatGPT, Perplexity, or other AI tools who they should hire, the AI recommends you, not your competitor. We do this by adding the right pages, facts, and hidden code that AI tools need to understand your company.",
   },
   {
     q: "Can you guarantee AI will recommend us?",
@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: "How is this different from SEO?",
-    a: "SEO helps you rank on Google. This helps you get recommended when buyers ask AI tools like ChatGPT \"who should I hire?\" They're two different channels — and AI is growing fast.",
+    a: "SEO helps you rank on Google. This helps you get recommended when buyers ask AI tools like ChatGPT \"who should I hire?\" They're two different channels, and AI is growing fast.",
   },
   {
     q: "What kind of changes do you make to our site?",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "Who is this for?",
-    a: "Any B2B company where one new client is worth $5,000 or more. Agencies, consultants, SaaS companies, law firms, professional services — if buyers compare options before hiring, this is for you.",
+    a: "Any B2B company where one new client is worth $5,000 or more. Agencies, consultants, SaaS companies, law firms, professional services: if buyers compare options before hiring, this is for you.",
   },
 ];
 

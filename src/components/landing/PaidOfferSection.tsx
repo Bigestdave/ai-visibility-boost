@@ -56,7 +56,7 @@ const PaidOfferSection = () => {
               Book a Call
             </a>
             <p className="mt-3.5 text-center text-[12.5px] text-white/30">
-              Free AI check first — no commitment required
+              Free AI check first, no commitment required
             </p>
           </div>
         </div>

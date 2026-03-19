@@ -26,14 +26,14 @@ const FormSection = () => {
         <div className="reveal below-fold">
           <h2 className="display-md text-foreground mb-5">See what AI says about you</h2>
           <p className="text-base-body mb-8">
-            Fill out the form and we'll ask ChatGPT, Perplexity, and other AI tools the same questions your buyers are asking. You'll get a plain-English report showing exactly what AI says — and what to fix.
+            Fill out the form and we'll ask ChatGPT, Perplexity, and other AI tools the same questions your buyers are asking. You'll get a plain-English report showing exactly what AI says, and what to fix.
           </p>
 
           <div className="flex flex-col gap-4 mt-9">
             {[
               { icon: "shield", text: "Your information is kept confidential" },
               { icon: "clock", text: "Takes less than 2 minutes to complete" },
-              { icon: "chart", text: "Limited spots — we cap reviews each week" },
+              { icon: "chart", text: "Limited spots: we cap reviews each week" },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2.5 text-sm text-ink-3">
                 <svg className="w-4 h-4 text-success flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
