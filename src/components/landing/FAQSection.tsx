@@ -2,28 +2,28 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "What exactly is AI search visibility?",
-    a: "It's how your company appears when buyers use tools like ChatGPT, Perplexity, Gemini, and AI-driven search experiences to research software, compare products, and validate shortlists. If those tools describe your product inaccurately, incompletely, or not at all — you lose influence over the evaluation before a prospect ever reaches your site.",
+    q: "What do you actually do?",
+    a: "We fix your website so that when buyers ask ChatGPT, Perplexity, or other AI tools who they should hire, the AI recommends you — not your competitor. We do this by adding the right pages, facts, and hidden code that AI tools need to understand your company.",
   },
   {
-    q: "Do you guarantee rankings or mentions in AI tools?",
-    a: "No. No one can credibly guarantee that. What we do is improve the content, page structure, and factual clarity AI systems rely on when interpreting and citing software companies.",
+    q: "Can you guarantee AI will recommend us?",
+    a: "No one can guarantee that. What we can guarantee is that we'll fix the specific things on your site that are preventing AI from understanding and recommending you. The results speak for themselves.",
   },
   {
     q: "How is this different from SEO?",
-    a: "Traditional SEO focuses on search engine rankings and traffic. AI search visibility focuses on how AI systems summarize, compare, and cite your product during research and evaluation.",
+    a: "SEO helps you rank on Google. This helps you get recommended when buyers ask AI tools like ChatGPT \"who should I hire?\" They're two different channels — and AI is growing fast.",
   },
   {
-    q: "What kinds of pages do you improve?",
-    a: "Usually comparison pages, alternatives pages, use-case pages, product facts pages, FAQs, and other high-intent content that helps both buyers and AI systems understand your product clearly.",
+    q: "What kind of changes do you make to our site?",
+    a: "We build comparison pages (you vs. competitors), add case study pages AI can read, fix your FAQ content, and add hidden code called \"structured data\" that tells AI your real facts. Nothing weird or spammy.",
   },
   {
-    q: "How long does the sprint take?",
-    a: "Most projects are completed in 7–10 business days depending on scope and access.",
+    q: "How long does it take?",
+    a: "Most projects are done in 7–10 business days. It's a focused sprint, not a drawn-out engagement.",
   },
   {
-    q: "Who is this best suited for?",
-    a: "B2B SaaS companies with clear competitors, comparison-based buying behavior, and a product that prospects research before purchase.",
+    q: "Who is this for?",
+    a: "Any B2B company where one new client is worth $5,000 or more. Agencies, consultants, SaaS companies, law firms, professional services — if buyers compare options before hiring, this is for you.",
   },
 ];
 

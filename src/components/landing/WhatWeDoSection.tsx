@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 
 const items = [
-  "Understand how ChatGPT, Perplexity, and AI tools describe your product today",
-  "Identify where competitors are appearing more strongly in buyer queries",
-  "Improve high-intent comparison, alternatives, and use-case pages",
-  "Clarify product facts, use cases, and differentiation for AI retrieval",
-  "Strengthen content structure AI systems use to surface your brand",
+  "See exactly what ChatGPT and Perplexity say about you when buyers ask",
+  "Find out where AI is recommending your competitors instead of you",
+  "Fix the hidden code on your site so AI can actually read your facts",
+  "Build the comparison and case study pages AI tools look for",
+  "Get your company recommended first when buyers ask AI who to hire",
 ];
 
 const platforms = [
@@ -57,13 +57,13 @@ const WhatWeDoSection = () => {
           <div className="max-w-[520px]">
             <div className="accent-line mb-6 reveal below-fold" />
             <h2 className="display-md text-foreground mb-6 reveal below-fold reveal-delay-1">
-              We help B2B SaaS companies improve AI search visibility
+              We make AI recommend you instead of your competitor
             </h2>
             <p className="text-lg-body mb-6 reveal below-fold reveal-delay-2">
-              Most SaaS websites are written for human visitors and traditional SEO. But AI systems prefer content that is clear, factual, structured, comparison-friendly, and easy to retrieve and cite.
+              Your website was built for Google and human visitors. But ChatGPT, Perplexity, and other AI tools read your site differently. If they can't find clear facts, comparisons, and case studies, they'll recommend someone else.
             </p>
             <p className="text-lg-body mb-6 reveal below-fold reveal-delay-2">
-              We identify the gaps between how your product is currently presented and what AI systems need to accurately surface and recommend your software during buyer research.
+              We fix the code and content on your site so AI tools can actually understand what you do — and start telling buyers to choose you.
             </p>
 
             <div className="flex flex-col gap-3.5 reveal below-fold reveal-delay-3">
@@ -94,7 +94,7 @@ const WhatWeDoSection = () => {
 
               <div className="px-6 pb-6">
                 {/* Your brand */}
-                <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-white/30 mb-3">Your brand</p>
+                <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-white/30 mb-3">Your company</p>
                 <div className="space-y-[1px]">
                   {platforms.map((p, i) => (
                     <div key={i} className="flex items-center gap-3 py-[10px]">

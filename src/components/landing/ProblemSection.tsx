@@ -1,10 +1,10 @@
 const queries = [
-  "\"What's the best software for this use case?\"",
-  "\"[Brand] vs [Competitor] — which is better?\"",
-  "\"Best alternatives to [Brand] for agencies?\"",
-  "\"Which tool is better for enterprise teams?\"",
-  "\"How does [Brand] pricing compare?\"",
-  "\"Is [Brand] good for startups vs enterprise?\"",
+  "\"Who's the best agency for B2B lead generation?\"",
+  "\"Should I hire [You] or [Competitor]?\"",
+  "\"Best alternatives to [Your Company] for enterprises?\"",
+  "\"Which consulting firm is better for startups?\"",
+  "\"How does [Your Company] pricing compare?\"",
+  "\"Is [Competitor] better than [You] for my use case?\"",
 ];
 
 const ProblemSection = () => {
@@ -14,13 +14,13 @@ const ProblemSection = () => {
         <div className="section-header mb-14">
           <div className="accent-line mb-6 reveal below-fold" />
           <h2 className="display-lg text-foreground reveal below-fold reveal-delay-1">
-            AI search is already<br />influencing buying decisions
+            Your buyers are asking AI<br />who to hire. You're not the answer.
           </h2>
         </div>
 
         <div className="max-w-[680px] reveal below-fold reveal-delay-2">
           <p className="text-lg-body mb-12">
-            When buyers research software today, they're no longer relying only on Google. They're asking AI tools direct buying questions — before they ever land on your site.
+            Before a prospect ever visits your website or books a call, they're asking ChatGPT and Perplexity who they should work with. If the AI doesn't know you — or worse, recommends your competitor — you've already lost the deal.
           </p>
         </div>
 
@@ -37,7 +37,7 @@ const ProblemSection = () => {
         {/* Conclusion card */}
         <div className="reveal below-fold mt-12 max-w-[640px] p-7 bg-white border border-border rounded-[var(--radius-lg)] border-l-[3px] border-l-primary">
           <p className="text-base text-ink-2 leading-[1.7]">
-            If your product is <strong className="text-foreground font-medium">missing, poorly explained, or outmatched by competitors</strong> in those answers, you may be losing buyer trust before a prospect ever books a demo.
+            If ChatGPT is <strong className="text-foreground font-medium">recommending your competitor, ignoring you, or getting your facts wrong</strong>, you're losing deals before anyone picks up the phone.
           </p>
         </div>
       </div>
