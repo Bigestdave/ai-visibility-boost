@@ -2,7 +2,7 @@ const steps = [
   {
     num: 1,
     title: "We check what AI says about you",
-    desc: "We ask ChatGPT, Perplexity, and other AI tools the exact questions your buyers are asking — and record what they say.",
+    desc: "We ask ChatGPT, Perplexity, and other AI tools the exact questions your buyers are asking, and record what they say.",
   },
   {
     num: 2,
