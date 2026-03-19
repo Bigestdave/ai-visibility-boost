@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: "How is this different from SEO?",
-    a: "SEO helps you rank on Google. This helps you get recommended when buyers ask AI tools like ChatGPT \"who should I hire?\" They're two different channels — and AI is growing fast.",
+    a: "SEO helps you rank on Google. This helps you get recommended when buyers ask AI tools like ChatGPT \"who should I hire?\" They're two different channels, and AI is growing fast.",
   },
   {
     q: "What kind of changes do you make to our site?",
