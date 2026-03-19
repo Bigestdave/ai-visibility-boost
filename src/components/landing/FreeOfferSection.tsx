@@ -26,7 +26,7 @@ const snapshotItems = [
   },
   {
     title: "Plain-English teardown",
-    desc: "Everything explained simply — no jargon, no fluff, just what matters",
+    desc: "Everything explained simply. No jargon, no fluff, just what matters",
     num: "06",
   },
 ];
