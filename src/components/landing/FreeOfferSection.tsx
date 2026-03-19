@@ -16,7 +16,7 @@ const snapshotItems = [
   },
   {
     title: "What to fix first",
-    desc: "A clear, prioritized list of the highest-impact changes — no 40-page report",
+    desc: "A clear, prioritized list of the highest-impact changes. No 40-page report",
     num: "04",
   },
   {
