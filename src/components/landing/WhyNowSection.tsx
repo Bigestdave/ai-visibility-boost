@@ -1,7 +1,7 @@
 const stats = [
-  { value: "68", accent: "%", desc: "of B2B buyers use AI tools during the research phase of a purchase decision" },
-  { value: "3", accent: "×", desc: "more likely to shortlist brands that appear clearly in AI-generated comparisons" },
-  { value: "1 ", accent: "in 3", desc: "SaaS evaluations now involve at least one AI search query before a demo is booked" },
+  { value: "68", accent: "%", desc: "of B2B buyers now ask AI tools for recommendations before contacting a company" },
+  { value: "3", accent: "×", desc: "more likely to get hired if AI recommends you by name when a buyer asks" },
+  { value: "1 ", accent: "in 3", desc: "deals now involve an AI search query before the buyer ever visits your website" },
 ];
 
 const WhyNowSection = () => {
@@ -13,10 +13,10 @@ const WhyNowSection = () => {
           <div className="reveal below-fold">
             <div className="w-10 h-[2px] bg-primary/40 mb-6" />
             <h2 className="display-md text-white mb-6">
-              The buyer journey is shifting to AI
+              Every day you wait, AI sends another buyer to your competitor
             </h2>
             <p className="text-lg-body !text-white/60">
-              More prospects are skipping traditional search and asking AI tools direct buying questions. Your web presence now influences how your product is summarized, compared, and recommended.
+              Your buyers aren't Googling anymore. They're asking ChatGPT "who should I hire?" If your company isn't the answer, someone else is getting that call.
             </p>
           </div>
 
@@ -35,7 +35,7 @@ const WhyNowSection = () => {
 
         {/* Closing card */}
         <div className="reveal below-fold mt-9 p-6 border border-white/[0.08] rounded-[var(--radius-lg)] bg-white/[0.03] text-[15px] text-white/55 leading-[1.7] max-w-full">
-          This isn't about gaming AI. It's about making sure your company is <strong className="text-white/90 font-medium">clearly represented where modern buying decisions happen.</strong>
+          This isn't about gaming AI. It's about making sure <strong className="text-white/90 font-medium">when buyers ask who to hire, your company is the answer.</strong>
         </div>
 
         <p className="reveal below-fold mt-4 text-xs text-white/30">

@@ -1,15 +1,14 @@
 import { useState } from "react";
 
 const categories = [
-  "Sales & CRM",
-  "Marketing & Automation",
-  "HR & Payroll",
-  "Developer Tools",
-  "Productivity & Collaboration",
-  "Operations & Workflow",
-  "Finance & Accounting",
-  "Security & Compliance",
-  "Other",
+  "Agency / Lead Gen",
+  "Consulting / Advisory",
+  "SaaS / Software",
+  "Law Firm / Legal",
+  "Professional Services",
+  "Marketing / Creative",
+  "Finance / Accounting",
+  "Other B2B",
 ];
 
 const FormSection = () => {
@@ -25,9 +24,9 @@ const FormSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-16 max-w-[1080px] mx-auto items-start">
         {/* Left copy */}
         <div className="reveal below-fold">
-          <h2 className="display-md text-foreground mb-5">Request your free snapshot</h2>
+          <h2 className="display-md text-foreground mb-5">See what AI says about you</h2>
           <p className="text-base-body mb-8">
-            Fill out the form and we'll review your AI search visibility across buyer-intent queries. You'll receive a focused teardown within 3–5 business days.
+            Fill out the form and we'll ask ChatGPT, Perplexity, and other AI tools the same questions your buyers are asking. You'll get a plain-English report showing exactly what AI says — and what to fix.
           </p>
 
           <div className="flex flex-col gap-4 mt-9">
@@ -56,7 +55,7 @@ const FormSection = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-serif text-foreground">Request received</h3>
-              <p className="mt-2 text-base text-ink-2">We'll review your company and get back to you within 3–5 business days.</p>
+              <p className="mt-2 text-base text-ink-2">We'll check what AI says about your company and get back to you within 3–5 business days.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="bg-background border border-border rounded-2xl p-8 sm:p-10">
@@ -74,7 +73,7 @@ const FormSection = () => {
 
               {/* Category */}
               <div className="mb-[18px]">
-                <label className="block text-[13px] font-medium text-ink-2 mb-[7px]">Main Product Category</label>
+                <label className="block text-[13px] font-medium text-ink-2 mb-[7px]">What kind of business?</label>
                 <select
                   name="category"
                   defaultValue=""
@@ -89,7 +88,7 @@ const FormSection = () => {
 
               {/* Competitors */}
               <div className="mb-[18px]">
-                <FormField label="Top 2 Competitors" name="competitors" type="text" required placeholder="e.g. Salesforce, HubSpot" />
+                <FormField label="Top 2 Competitors" name="competitors" type="text" required placeholder="e.g. Rival Agency, Competitor Co." />
               </div>
 
               {/* Notes */}
@@ -100,7 +99,7 @@ const FormSection = () => {
                 <textarea
                   name="notes"
                   rows={3}
-                  placeholder="e.g. We're losing to Competitor X in ChatGPT comparisons…"
+                  placeholder="e.g. I think ChatGPT is recommending our competitor instead of us…"
                   className="w-full py-3 px-4 text-[15px] text-foreground bg-white border border-border rounded-lg outline-none transition-all duration-200 focus:border-primary focus:shadow-[0_0_0_3px_hsl(var(--accent))] resize-vertical min-h-[90px] placeholder:text-ink-3"
                 />
               </div>
@@ -109,7 +108,7 @@ const FormSection = () => {
                 type="submit"
                 className="w-full mt-2 inline-flex items-center justify-center gap-2 text-base font-medium rounded-lg py-4 bg-foreground text-white shadow-[0_1px_2px_rgba(0,0,0,.2),inset_0_1px_0_rgba(255,255,255,.08)] hover:bg-[#222220] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(0,0,0,.18)] active:translate-y-0 transition-all duration-200"
               >
-                Send My Snapshot Request
+                Check What AI Says About Me
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

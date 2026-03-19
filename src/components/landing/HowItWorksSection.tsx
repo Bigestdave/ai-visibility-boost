@@ -1,23 +1,23 @@
 const steps = [
   {
     num: 1,
-    title: "Audit your AI visibility",
-    desc: "We check how your company appears in ChatGPT, Perplexity, and AI tools for buyer-intent queries.",
+    title: "We check what AI says about you",
+    desc: "We ask ChatGPT, Perplexity, and other AI tools the exact questions your buyers are asking — and record what they say.",
   },
   {
     num: 2,
-    title: "Identify the gaps",
-    desc: "We find where your product is missing, misrepresented, or losing to competitors.",
+    title: "We show you the problem",
+    desc: "You'll see exactly where AI is ignoring you, getting your facts wrong, or sending buyers to your competitor.",
   },
   {
     num: 3,
-    title: "Implement the fixes",
-    desc: "We build the pages, comparisons, and content structures that help AI systems surface your product.",
+    title: "We fix your site",
+    desc: "We add the pages, code, and content that AI tools need to understand your company and recommend you.",
   },
   {
     num: 4,
-    title: "Improve buyer visibility",
-    desc: "Your product is more accurately represented in AI-driven research and evaluation.",
+    title: "AI starts recommending you",
+    desc: "When buyers ask AI who to hire, your company shows up — with accurate facts and a clear reason to choose you.",
   },
 ];
 

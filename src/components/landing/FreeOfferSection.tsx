@@ -1,32 +1,32 @@
 const snapshotItems = [
   {
-    title: "Current AI description",
-    desc: "How AI tools currently describe your product across major platforms",
+    title: "What AI tells buyers about you",
+    desc: "We'll show you exactly what ChatGPT, Perplexity, and other AI tools say when someone asks about your company",
     num: "01",
   },
   {
-    title: "Competitor comparison",
-    desc: "Which competitors show up most often and where they're winning",
+    title: "Where your competitor is winning",
+    desc: "Which competitors AI recommends instead of you, and why",
     num: "02",
   },
   {
-    title: "Visibility gaps",
-    desc: "Key positioning gaps and missing content structures",
+    title: "What's missing from your site",
+    desc: "The specific pages and facts AI tools can't find on your website",
     num: "03",
   },
   {
-    title: "Recommended next steps",
-    desc: "What to fix first, with clear priority ordering",
+    title: "What to fix first",
+    desc: "A clear, prioritized list of the highest-impact changes — no 40-page report",
     num: "04",
   },
   {
-    title: "Missing pages",
-    desc: "High-intent pages your site is missing that AI systems look for",
+    title: "Pages you're missing",
+    desc: "The comparison and case study pages buyers and AI tools are looking for",
     num: "05",
   },
   {
-    title: "Short, practical teardown",
-    desc: "Focused on highest-impact improvements — not a 40-page report",
+    title: "Plain-English teardown",
+    desc: "Everything explained simply — no jargon, no fluff, just what matters",
     num: "06",
   },
 ];
@@ -44,9 +44,9 @@ const FreeOfferSection = () => {
               </svg>
               Free · No commitment
             </span>
-            <h2 className="display-md text-foreground mt-5">Get a Free AI Visibility Snapshot</h2>
+            <h2 className="display-md text-foreground mt-5">See What AI Is Saying About You — Free</h2>
             <p className="text-lg-body mt-4 max-w-[560px] mx-auto">
-              We'll run a quick review of how your company appears across AI search for commercial-intent queries and send you a focused teardown of where you stand.
+              We'll ask AI the same questions your buyers are asking, and show you exactly what it says about your company. No charge, no commitment.
             </p>
           </div>
 
@@ -74,13 +74,13 @@ const FreeOfferSection = () => {
               href="#snapshot"
               className="inline-flex items-center justify-center gap-3 text-[15px] font-medium tracking-[-0.01em] rounded-lg px-8 py-[15px] bg-foreground text-white shadow-[0_1px_2px_rgba(0,0,0,.2),inset_0_1px_0_rgba(255,255,255,.08)] hover:bg-[#222220] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(0,0,0,.18)] active:translate-y-0 transition-all duration-200"
             >
-              Request Free Snapshot
+              Get My Free AI Check
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
             <p className="text-[13px] text-ink-3">
-              ✦ No pitch call required. We review a limited number of companies each week to keep the analysis useful.
+              ✦ No pitch call required. We review a limited number of companies each week.
             </p>
           </div>
         </div>

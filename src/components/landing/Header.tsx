@@ -38,7 +38,7 @@ const Header = () => {
               </svg>
             </div>
             <span className="font-serif text-[19px] tracking-[-0.02em] text-foreground">Citeable</span>
-            <span className="text-xs text-ink-3 ml-1 font-normal hidden md:inline">— AI Search Optimization for B2B SaaS</span>
+            <span className="text-xs text-ink-3 ml-1 font-normal hidden md:inline">— Get Recommended by AI</span>
           </a>
 
           {/* Nav links */}
@@ -55,7 +55,7 @@ const Header = () => {
               href="#snapshot"
               className="hidden sm:inline-flex items-center justify-center gap-2 text-[15px] font-medium tracking-[-0.01em] rounded-lg px-[22px] py-3 bg-foreground text-white shadow-[0_1px_2px_rgba(0,0,0,.2),inset_0_1px_0_rgba(255,255,255,.08)] hover:bg-[#222220] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(0,0,0,.18)] active:translate-y-0 transition-all duration-200"
             >
-              Get Free Snapshot
+              Free AI Check
             </a>
             <button
               className="lg:hidden p-2 text-foreground"
@@ -105,7 +105,7 @@ const Header = () => {
             className="mt-4 bg-foreground text-white px-8 py-4 rounded-lg text-base font-medium w-64 text-center"
             onClick={() => setMobileOpen(false)}
           >
-            Get Free Snapshot
+            Free AI Check
           </a>
         </div>
       )}
@@ -117,12 +117,12 @@ const Header = () => {
         }`}
         style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
       >
-        <span className="text-sm text-white/60 hidden sm:block">AI buyers can't find you.</span>
+        <span className="text-sm text-white/60 hidden sm:block">AI is sending buyers to your competitor.</span>
         <a
           href="#snapshot"
           className="inline-flex items-center justify-center gap-2 text-sm font-medium rounded-lg px-[18px] py-[9px] bg-primary text-white shadow-[0_1px_2px_rgba(36,82,232,.3),inset_0_1px_0_rgba(255,255,255,.12)] hover:bg-[#3460F0] hover:-translate-y-px transition-all duration-200"
         >
-          Get Free Snapshot
+          Free AI Check
         </a>
       </div>
     </>
