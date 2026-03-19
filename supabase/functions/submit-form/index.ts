@@ -57,7 +57,7 @@ Deno.serve(async (req) => {
         },
         body: JSON.stringify({
           from: "Citeable <onboarding@resend.dev>",
-          to: ["delivered@resend.dev"],
+          to: ["francolabowale@gmail.com"],
           subject: `New AI Visibility Request: ${company}`,
           html: `
             <h2>New Form Submission</h2>
