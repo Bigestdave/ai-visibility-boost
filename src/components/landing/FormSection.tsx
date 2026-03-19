@@ -26,7 +26,7 @@ const FormSection = () => {
         <div className="reveal below-fold">
           <h2 className="display-md text-foreground mb-5">See what AI says about you</h2>
           <p className="text-base-body mb-8">
-            Fill out the form and we'll ask ChatGPT, Perplexity, and other AI tools the same questions your buyers are asking. You'll get a plain-English report showing exactly what AI says — and what to fix.
+            Fill out the form and we'll ask ChatGPT, Perplexity, and other AI tools the same questions your buyers are asking. You'll get a plain-English report showing exactly what AI says, and what to fix.
           </p>
 
           <div className="flex flex-col gap-4 mt-9">
