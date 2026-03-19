@@ -1,7 +1,7 @@
 const queryCards = [
   { query: '"Should I hire Acme or their competitor?"', source: "ChatGPT · Recommended competitor", dotClass: "bg-[#10a37f]" },
   { query: '"Who\'s the best agency for B2B lead gen?"', source: "Perplexity · Your brand missing", dotClass: "bg-[#1c7ed6]" },
-  { query: '"Acme vs Rival — which one should I go with?"', source: "Gemini · Rival ranked higher", dotClass: "bg-[#8b5cf6]" },
+  { query: '"Acme vs Rival: which one should I go with?"', source: "Gemini · Rival ranked higher", dotClass: "bg-[#8b5cf6]" },
 ];
 
 const aiTools = [
