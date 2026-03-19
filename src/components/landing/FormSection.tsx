@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 const categories = [
   "Agency / Lead Gen",
@@ -13,10 +14,40 @@ const categories = [
 
 const FormSection = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      company: formData.get("company") as string,
+      website: formData.get("website") as string,
+      category: formData.get("category") as string,
+      competitors: formData.get("competitors") as string,
+      notes: formData.get("notes") as string,
+    };
+
+    try {
+      const { data, error: fnError } = await supabase.functions.invoke("submit-form", {
+        body: payload,
+      });
+
+      if (fnError) throw fnError;
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Submission error:", err);
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -104,14 +135,21 @@ const FormSection = () => {
                 />
               </div>
 
+              {error && (
+                <p className="text-sm text-red-600 mb-3 text-center">{error}</p>
+              )}
+
               <button
                 type="submit"
-                className="w-full mt-2 inline-flex items-center justify-center gap-2 text-base font-medium rounded-lg py-4 bg-foreground text-white shadow-[0_1px_2px_rgba(0,0,0,.2),inset_0_1px_0_rgba(255,255,255,.08)] hover:bg-[#222220] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(0,0,0,.18)] active:translate-y-0 transition-all duration-200"
+                disabled={loading}
+                className="w-full mt-2 inline-flex items-center justify-center gap-2 text-base font-medium rounded-lg py-4 bg-foreground text-white shadow-[0_1px_2px_rgba(0,0,0,.2),inset_0_1px_0_rgba(255,255,255,.08)] hover:bg-[#222220] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(0,0,0,.18)] active:translate-y-0 transition-all duration-200 disabled:opacity-60 disabled:pointer-events-none"
               >
-                Check What AI Says About Me
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                {loading ? "Submitting..." : "Check What AI Says About Me"}
+                {!loading && (
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                )}
               </button>
 
               <p className="mt-3.5 text-center text-[12.5px] text-ink-3 flex items-center justify-center gap-1.5">
