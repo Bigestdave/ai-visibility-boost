@@ -3,7 +3,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "What do you actually do?",
-    a: "We fix your website so that when buyers ask ChatGPT, Perplexity, or other AI tools who they should hire, the AI recommends you — not your competitor. We do this by adding the right pages, facts, and hidden code that AI tools need to understand your company.",
+    a: "We fix your website so that when buyers ask ChatGPT, Perplexity, or other AI tools who they should hire, the AI recommends you, not your competitor. We do this by adding the right pages, facts, and hidden code that AI tools need to understand your company.",
   },
   {
     q: "Can you guarantee AI will recommend us?",
