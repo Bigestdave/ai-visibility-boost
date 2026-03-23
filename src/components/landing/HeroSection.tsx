@@ -1,14 +1,14 @@
 const queryCards = [
-  { query: '"Should I hire Acme or their competitor?"', source: "ChatGPT · Recommended competitor", dotClass: "bg-[#10a37f]" },
-  { query: '"Who\'s the best agency for B2B lead gen?"', source: "Perplexity · Your brand missing", dotClass: "bg-[#1c7ed6]" },
-  { query: '"Acme vs Rival: which one should I go with?"', source: "Gemini · Rival ranked higher", dotClass: "bg-[#8b5cf6]" },
+  { query: '"What\'s the best tool for cross-chain swaps?"', source: "ChatGPT · Recommended competitor", dotClass: "bg-[#10a37f]" },
+  { query: '"Should I use Acme or their alternative?"', source: "Perplexity · Your product missing", dotClass: "bg-[#1c7ed6]" },
+  { query: '"Acme vs Rival: which platform is better?"', source: "Gemini · Rival ranked higher", dotClass: "bg-[#8b5cf6]" },
 ];
 
 const aiTools = [
   { name: "ChatGPT", desc: "AI search queries" },
   { name: "Perplexity", desc: "Cited answers" },
   { name: "Gemini", desc: "Product comparisons" },
-  { name: "Claude", desc: "Buyer research" },
+  { name: "Claude", desc: "Developer research" },
   { name: "AI Overview", desc: "Google AI results" },
 ];
 
@@ -39,21 +39,21 @@ const HeroSection = () => {
         {/* Eyebrow */}
         <div className="reveal flex items-center gap-2.5 mb-8">
           <span className="w-[7px] h-[7px] rounded-full bg-primary" style={{ animation: "pulse-dot 2.4s ease infinite" }} />
-          <span className="text-[13px] font-medium text-ink-3 tracking-[0.03em]">AI is changing how buyers choose who to hire</span>
+          <span className="text-[13px] font-medium text-ink-3 tracking-[0.03em]">AI is changing how people choose software and tools</span>
         </div>
 
         {/* Headline */}
         <h1 className="reveal reveal-delay-1 display-xl max-w-[820px] mb-7 text-foreground">
-          Buyers are asking{" "}
+          People are asking{" "}
           <br className="hidden sm:block" />
-          <em className="italic text-primary">ChatGPT</em> who to hire.
+          <em className="italic text-primary">ChatGPT</em> what to use.
           <br className="hidden sm:block" />
           It's not recommending you.
         </h1>
 
         {/* Sub */}
         <p className="reveal reveal-delay-2 max-w-[580px] text-lg-body mb-[42px]">
-          Your prospects are asking AI tools who they should work with. Right now, the AI is telling them to go to your competitor. We fix the hidden code on your site so AI recommends you instead.
+          Your users are asking AI tools which software to choose. Right now, the AI is telling them to use your competitor. We fix the hidden code on your site so AI recommends you instead.
         </p>
 
         {/* CTAs */}
@@ -82,7 +82,7 @@ const HeroSection = () => {
           <svg className="w-4 h-4 text-success flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
-          <span>We'll show you exactly what ChatGPT tells buyers about your company vs. your competitors.</span>
+          <span>We'll show you exactly what ChatGPT tells users about your product vs. your competitors.</span>
         </div>
 
         {/* Floating query cards - desktop only */}
@@ -97,7 +97,7 @@ const HeroSection = () => {
                 animationDelay: `${i * 0.6}s`,
               }}
             >
-              <p className="text-[11px] font-medium tracking-[0.05em] uppercase text-ink-3 mb-1.5">Buyer query</p>
+              <p className="text-[11px] font-medium tracking-[0.05em] uppercase text-ink-3 mb-1.5">User query</p>
               <p className="font-medium text-foreground">{card.query}</p>
               <div className="inline-flex items-center gap-[5px] mt-2 text-[11.5px] text-ink-3">
                 <span className={`w-2 h-2 rounded-sm flex-shrink-0 ${card.dotClass}`} />

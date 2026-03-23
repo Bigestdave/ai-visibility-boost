@@ -31,7 +31,7 @@ const Header = () => {
       >
         <div className="w-full max-w-[1200px] mx-auto flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5">
+          <a href="/" className="flex items-center gap-2.5">
             <div className="w-[30px] h-[30px] bg-foreground rounded-lg flex items-center justify-center flex-shrink-0">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.039 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H10V18H0Z" fill="white" />
@@ -43,16 +43,16 @@ const Header = () => {
 
           {/* Nav links */}
           <div className="hidden lg:flex items-center gap-7">
-            <a href="#problem" className="text-sm text-ink-2 hover:text-foreground transition-colors">Problem</a>
-            <a href="#how-it-works" className="text-sm text-ink-2 hover:text-foreground transition-colors">How it works</a>
-            <a href="#sprint" className="text-sm text-ink-2 hover:text-foreground transition-colors">Pricing</a>
-            <a href="#faq" className="text-sm text-ink-2 hover:text-foreground transition-colors">FAQ</a>
+            <a href="/#problem" className="text-sm text-ink-2 hover:text-foreground transition-colors">Problem</a>
+            <a href="/#how-it-works" className="text-sm text-ink-2 hover:text-foreground transition-colors">How it works</a>
+            <a href="/#sprint" className="text-sm text-ink-2 hover:text-foreground transition-colors">Pricing</a>
+            <a href="/#faq" className="text-sm text-ink-2 hover:text-foreground transition-colors">FAQ</a>
           </div>
 
           {/* CTA */}
           <div className="flex items-center gap-2.5">
             <a
-              href="#snapshot"
+              href="/#snapshot"
               className="hidden sm:inline-flex items-center justify-center gap-2 text-[15px] font-medium tracking-[-0.01em] rounded-lg px-[22px] py-3 bg-foreground text-white shadow-[0_1px_2px_rgba(0,0,0,.2),inset_0_1px_0_rgba(255,255,255,.08)] hover:bg-[#222220] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(0,0,0,.18)] active:translate-y-0 transition-all duration-200"
             >
               Free AI Check
@@ -86,10 +86,10 @@ const Header = () => {
             </svg>
           </button>
           {[
-            { label: "Problem", href: "#problem" },
-            { label: "How it works", href: "#how-it-works" },
-            { label: "Pricing", href: "#sprint" },
-            { label: "FAQ", href: "#faq" },
+            { label: "Problem", href: "/#problem" },
+            { label: "How it works", href: "/#how-it-works" },
+            { label: "Pricing", href: "/#sprint" },
+            { label: "FAQ", href: "/#faq" },
           ].map((item) => (
             <a
               key={item.label}
@@ -101,7 +101,7 @@ const Header = () => {
             </a>
           ))}
           <a
-            href="#snapshot"
+            href="/#snapshot"
             className="mt-4 bg-foreground text-white px-8 py-4 rounded-lg text-base font-medium w-64 text-center"
             onClick={() => setMobileOpen(false)}
           >
@@ -117,9 +117,9 @@ const Header = () => {
         }`}
         style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
       >
-        <span className="text-sm text-white/60 hidden sm:block">AI is sending buyers to your competitor.</span>
+        <span className="text-sm text-white/60 hidden sm:block">AI is sending users to your competitor.</span>
         <a
-          href="#snapshot"
+          href="/#snapshot"
           className="inline-flex items-center justify-center gap-2 text-sm font-medium rounded-lg px-[18px] py-[9px] bg-primary text-white shadow-[0_1px_2px_rgba(36,82,232,.3),inset_0_1px_0_rgba(255,255,255,.12)] hover:bg-[#3460F0] hover:-translate-y-px transition-all duration-200"
         >
           Free AI Check
