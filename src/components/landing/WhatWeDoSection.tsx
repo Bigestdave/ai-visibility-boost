@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 
 const items = [
-  "See exactly what ChatGPT and Perplexity say about you when buyers ask",
+  "See exactly what ChatGPT and Perplexity say about you when users ask",
   "Find out where AI is recommending your competitors instead of you",
   "Fix the hidden code on your site so AI can actually read your facts",
-  "Build the comparison and case study pages AI tools look for",
-  "Get your company recommended first when buyers ask AI who to hire",
+  "Build the comparison and documentation pages AI tools look for",
+  "Get your product recommended first when users ask AI what to choose",
 ];
 
 const platforms = [
@@ -60,10 +60,10 @@ const WhatWeDoSection = () => {
               We make AI recommend you instead of your competitor
             </h2>
             <p className="text-lg-body mb-6 reveal below-fold reveal-delay-2">
-              Your website was built for Google and human visitors. But ChatGPT, Perplexity, and other AI tools read your site differently. If they can't find clear facts, comparisons, and case studies, they'll recommend someone else.
+              Your website was built for Google and human visitors. But ChatGPT, Perplexity, and other AI tools read your site differently. If they can't find clear facts, comparisons, and documentation, they'll recommend someone else.
             </p>
             <p className="text-lg-body mb-6 reveal below-fold reveal-delay-2">
-              We fix the code and content on your site so AI tools can actually understand what you do, and start telling buyers to choose you.
+              We fix the code and content on your site so AI tools can actually understand what you do, and start telling users to choose you.
             </p>
 
             <div className="flex flex-col gap-3.5 reveal below-fold reveal-delay-3">
@@ -94,7 +94,7 @@ const WhatWeDoSection = () => {
 
               <div className="px-6 pb-6">
                 {/* Your brand */}
-                <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-white/30 mb-3">Your company</p>
+                <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-white/30 mb-3">Your product</p>
                 <div className="space-y-[1px]">
                   {platforms.map((p, i) => (
                     <div key={i} className="flex items-center gap-3 py-[10px]">
@@ -158,7 +158,7 @@ const WhatWeDoSection = () => {
               </div>
 
               <div className="px-6 py-3 border-t border-white/[0.05] bg-white/[0.02]">
-                <p className="text-[11px] text-white/25 italic">Example snapshot output — your results may vary</p>
+                <p className="text-[11px] text-white/25 italic">Example snapshot output, your results may vary</p>
               </div>
             </div>
           </div>

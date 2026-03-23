@@ -2,14 +2,14 @@ import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
 const categories = [
-  "Agency / Lead Gen",
-  "Consulting / Advisory",
   "SaaS / Software",
-  "Law Firm / Legal",
-  "Professional Services",
-  "Marketing / Creative",
-  "Finance / Accounting",
-  "Other B2B",
+  "Developer Tools / APIs",
+  "Web3 / Blockchain",
+  "Fintech / Payments",
+  "Infrastructure / DevOps",
+  "Marketing / Analytics",
+  "Agency / Services",
+  "Other",
 ];
 
 const FormSection = () => {
@@ -57,7 +57,7 @@ const FormSection = () => {
         <div className="reveal below-fold">
           <h2 className="display-md text-foreground mb-5">See what AI says about you</h2>
           <p className="text-base-body mb-8">
-            Fill out the form and we'll ask ChatGPT, Perplexity, and other AI tools the same questions your buyers are asking. You'll get a plain-English report showing exactly what AI says, and what to fix.
+            Fill out the form and we'll ask ChatGPT, Perplexity, and other AI tools the same questions your users are asking. You'll get a plain-English report showing exactly what AI says, and what to fix.
           </p>
 
           <div className="flex flex-col gap-4 mt-9">
@@ -86,7 +86,7 @@ const FormSection = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-serif text-foreground">Request received</h3>
-              <p className="mt-2 text-base text-ink-2">We'll check what AI says about your company and get back to you within 3–5 business days.</p>
+              <p className="mt-2 text-base text-ink-2">We'll check what AI says about your product and get back to you within 3-5 business days.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="bg-background border border-border rounded-2xl p-8 sm:p-10">
@@ -98,13 +98,13 @@ const FormSection = () => {
 
               {/* Company + Website */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-[18px]">
-                <FormField label="Company Name" name="company" type="text" required placeholder="Acme Inc." />
-                <FormField label="Company Website" name="website" type="url" required placeholder="https://acme.com" />
+                <FormField label="Company / Product Name" name="company" type="text" required placeholder="Acme Inc." />
+                <FormField label="Website" name="website" type="url" required placeholder="https://acme.com" />
               </div>
 
               {/* Category */}
               <div className="mb-[18px]">
-                <label className="block text-[13px] font-medium text-ink-2 mb-[7px]">What kind of business?</label>
+                <label className="block text-[13px] font-medium text-ink-2 mb-[7px]">What kind of product?</label>
                 <select
                   name="category"
                   defaultValue=""
@@ -119,7 +119,7 @@ const FormSection = () => {
 
               {/* Competitors */}
               <div className="mb-[18px]">
-                <FormField label="Top 2 Competitors" name="competitors" type="text" required placeholder="e.g. Rival Agency, Competitor Co." />
+                <FormField label="Top 2 Competitors" name="competitors" type="text" required placeholder="e.g. Rival Tool, Competitor Co." />
               </div>
 
               {/* Notes */}

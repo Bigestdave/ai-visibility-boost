@@ -1,10 +1,10 @@
 const queries = [
-  "\"Who's the best agency for B2B lead generation?\"",
-  "\"Should I hire [You] or [Competitor]?\"",
-  "\"Best alternatives to [Your Company] for enterprises?\"",
-  "\"Which consulting firm is better for startups?\"",
-  "\"How does [Your Company] pricing compare?\"",
-  "\"Is [Competitor] better than [You] for my use case?\"",
+  "\"What's the best tool for [your category]?\"",
+  "\"Should I use [You] or [Competitor]?\"",
+  "\"Best alternatives to [Your Product] for enterprises?\"",
+  "\"Which platform is better for my use case?\"",
+  "\"How does [Your Product] pricing compare?\"",
+  "\"Is [Competitor] better than [You] for startups?\"",
 ];
 
 const ProblemSection = () => {
@@ -14,13 +14,13 @@ const ProblemSection = () => {
         <div className="section-header mb-14">
           <div className="accent-line mb-6 reveal below-fold" />
           <h2 className="display-lg text-foreground reveal below-fold reveal-delay-1">
-            Your buyers are asking AI<br />who to hire. You're not the answer.
+            Your users are asking AI<br />what to choose. You're not the answer.
           </h2>
         </div>
 
         <div className="max-w-[680px] reveal below-fold reveal-delay-2">
           <p className="text-lg-body mb-12">
-            Before a prospect ever visits your website or books a call, they're asking ChatGPT and Perplexity who they should work with. If the AI doesn't know you, or worse, recommends your competitor, you've already lost the deal.
+            Before a prospect ever visits your website or signs up for a trial, they're asking ChatGPT and Perplexity which tool they should use. If the AI doesn't know you, or worse, recommends your competitor, you've already lost the deal.
           </p>
         </div>
 
@@ -37,7 +37,7 @@ const ProblemSection = () => {
         {/* Conclusion card */}
         <div className="reveal below-fold mt-12 max-w-[640px] p-7 bg-white border border-border rounded-[var(--radius-lg)] border-l-[3px] border-l-primary">
           <p className="text-base text-ink-2 leading-[1.7]">
-            If ChatGPT is <strong className="text-foreground font-medium">recommending your competitor, ignoring you, or getting your facts wrong</strong>, you're losing deals before anyone picks up the phone.
+            If ChatGPT is <strong className="text-foreground font-medium">recommending your competitor, ignoring you, or getting your facts wrong</strong>, you're losing users before they ever visit your site.
           </p>
         </div>
       </div>

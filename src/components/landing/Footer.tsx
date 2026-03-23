@@ -11,7 +11,7 @@ const Footer = () => {
             </span>
             Citeable
           </span>
-          <p className="text-[12.5px] text-ink-3 mt-1">Get recommended by AI when buyers ask who to hire</p>
+          <p className="text-[12.5px] text-ink-3 mt-1">Get recommended by AI when users ask what to choose</p>
         </div>
         <div className="text-[12.5px] text-ink-3 text-right">
           © {new Date().getFullYear()} Citeable

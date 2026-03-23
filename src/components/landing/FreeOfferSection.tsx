@@ -1,7 +1,7 @@
 const snapshotItems = [
   {
-    title: "What AI tells buyers about you",
-    desc: "We'll show you exactly what ChatGPT, Perplexity, and other AI tools say when someone asks about your company",
+    title: "What AI tells users about you",
+    desc: "We'll show you exactly what ChatGPT, Perplexity, and other AI tools say when someone asks about your product",
     num: "01",
   },
   {
@@ -11,7 +11,7 @@ const snapshotItems = [
   },
   {
     title: "What's missing from your site",
-    desc: "The specific pages and facts AI tools can't find on your website",
+    desc: "The specific pages and facts AI tools can't find on your website or docs",
     num: "03",
   },
   {
@@ -21,7 +21,7 @@ const snapshotItems = [
   },
   {
     title: "Pages you're missing",
-    desc: "The comparison and case study pages buyers and AI tools are looking for",
+    desc: "The comparison and documentation pages users and AI tools are looking for",
     num: "05",
   },
   {
@@ -46,7 +46,7 @@ const FreeOfferSection = () => {
             </span>
             <h2 className="display-md text-foreground mt-5">See What AI Is Saying About You (Free)</h2>
             <p className="text-lg-body mt-4 max-w-[560px] mx-auto">
-              We'll ask AI the same questions your buyers are asking, and show you exactly what it says about your company. No charge, no commitment.
+              We'll ask AI the same questions your users are asking, and show you exactly what it says about your product. No charge, no commitment.
             </p>
           </div>
 

@@ -4,10 +4,10 @@ const FinalCTASection = () => {
       <div className="max-w-[680px] mx-auto reveal below-fold">
         <div className="accent-line mx-auto mb-6" />
         <h2 className="display-lg text-foreground mb-5">
-          Find out what AI is telling buyers about your company
+          Find out what AI is telling users about your product
         </h2>
         <p className="text-lg-body mb-10 max-w-[520px] mx-auto">
-          We'll ask ChatGPT the same questions your buyers are asking and show you exactly what it says. Free, no commitment.
+          We'll ask ChatGPT the same questions your users are asking and show you exactly what it says. Free, no commitment.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3 mb-4">
           <a
